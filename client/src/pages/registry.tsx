@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import { useQuery, useMutation } from "@tanstack/react-query";
 import { apiRequest, queryClient } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
@@ -13,6 +13,33 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Link } from "wouter";
+
+// ── NVIDIA × Hugging Face Badge ──
+function NvidiaHfBadge() {
+  return (
+    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded border border-gray-200 bg-white/50" data-testid="badge-nvidia-hf">
+      <span className="font-mono text-[9px] text-gray-400">Powered by</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-label="NVIDIA">
+        <path d="M9.04 8.08C11.8 7.76 13.72 9.4 13.72 9.4S12.08 11.4 9.56 11.4C7.96 11.4 6.84 10.32 6.84 9.12C6.84 8.36 7.48 8.16 9.04 8.08Z" fill="#76B900"/>
+        <path d="M9.2 6.52C12.88 5.96 15.84 8.2 15.84 8.2S13.48 12.04 9.28 12.04C6.6 12.04 4.8 10.24 4.8 8.4C4.8 6.96 6.16 6.56 9.2 6.52Z" fill="#76B900" opacity="0.6"/>
+        <path d="M9.36 4.96C14 4.12 17.96 7 17.96 7S14.88 12.68 9 12.68C5.24 12.68 2.76 10.16 2.76 7.68C2.76 5.56 4.76 4.96 9.36 4.96Z" fill="#76B900" opacity="0.3"/>
+        <path d="M3 14.5V17.5H5V15.5H6V17.5H8V14.5H3Z" fill="#76B900"/>
+        <path d="M9 14.5L10.5 17.5H12.5L14 14.5H12L11.5 16L11 14.5H9Z" fill="#76B900"/>
+        <path d="M15 14.5V17.5H17V14.5H15Z" fill="#76B900"/>
+        <path d="M18 14.5V17.5H20V16H21V17.5H22V14.5H18Z" fill="#76B900" opacity="0.8"/>
+      </svg>
+      <span className="font-mono text-[9px] font-semibold" style={{ color: "#76B900" }}>NVIDIA</span>
+      <span className="font-mono text-[9px] text-gray-400 mx-0.5">×</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-label="Hugging Face">
+        <circle cx="12" cy="12" r="10" fill="#FFD21E" opacity="0.15"/>
+        <circle cx="9" cy="10" r="1.5" fill="#FFD21E"/>
+        <circle cx="15" cy="10" r="1.5" fill="#FFD21E"/>
+        <path d="M8 14.5C8 14.5 9.5 17 12 17C14.5 17 16 14.5 16 14.5" stroke="#FFD21E" strokeWidth="1.5" strokeLinecap="round"/>
+      </svg>
+      <span className="font-mono text-[9px] font-semibold" style={{ color: "#FFD21E" }}>HF</span>
+    </div>
+  );
+}
 
 // ── Status badge colors ──
 function statusColor(status: string) {
@@ -359,16 +386,54 @@ function MarketMode({ masters }: { masters: MasterCard[] }) {
   );
 }
 
+// ── Signal type badge colors ──
+function signalTypeColor(type: string) {
+  switch (type) {
+    case "SHIP": return "bg-green-50 text-green-700 border-green-300";
+    case "RAISE": return "bg-blue-50 text-blue-700 border-blue-300";
+    case "PUBLISH": return "bg-purple-50 text-purple-700 border-purple-300";
+    case "WIN": return "bg-amber-50 text-amber-700 border-amber-300";
+    case "HIRE": return "bg-cyan-50 text-cyan-700 border-cyan-300";
+    case "EXIT": return "bg-red-50 text-red-700 border-red-300";
+    case "LAUNCH": return "bg-indigo-50 text-indigo-700 border-indigo-300";
+    default: return "bg-gray-50 text-gray-700 border-gray-300";
+  }
+}
+
 // ── Signal Box ──
 function SignalBox() {
   const [input, setInput] = useState("");
+  const [signalInput, setSignalInput] = useState("");
   const [progress, setProgress] = useState(-1);
+  const [signals, setSignals] = useState<Array<{
+    subjectName: string;
+    signalType: string;
+    confidence: number;
+    relevance: string;
+    summary: string;
+  }>>([]);
+  const { toast } = useToast();
+
   const steps = [
     "Ingesting signal...",
     "Mapping frameworks...",
     "Calculating QTAC₇...",
     "Extracting the One Metric That Matters...",
   ];
+
+  const signalMutation = useMutation({
+    mutationFn: async (text: string) => {
+      const res = await apiRequest("POST", "/api/ai/process-signal", { signalText: text });
+      return res.json();
+    },
+    onSuccess: (data) => {
+      setSignals((prev) => [data, ...prev]);
+      setSignalInput("");
+    },
+    onError: (err: Error) => {
+      toast({ title: "Signal Processing Failed", description: err.message, variant: "destructive" });
+    },
+  });
 
   const handleGenerate = () => {
     if (!input.trim()) return;
@@ -387,11 +452,74 @@ function SignalBox() {
     }, 900);
   };
 
+  const handleSignalSubmit = () => {
+    if (!signalInput.trim()) return;
+    signalMutation.mutate(signalInput);
+  };
+
   return (
-    <div className="max-w-2xl mx-auto">
+    <div className="max-w-2xl mx-auto space-y-6">
+      {/* Signal Ingest (AI) */}
+      <div className="bg-white rounded-lg border border-[#E5E7EB] p-8">
+        <div className="flex items-center justify-between mb-2">
+          <p className="font-mono text-[10px] text-gray-400 uppercase tracking-[0.15em]">
+            Signal Box
+          </p>
+          <NvidiaHfBadge />
+        </div>
+        <h3 className="font-serif text-lg text-gray-900 mb-1">
+          AI Signal Processor
+        </h3>
+        <p className="font-mono text-[11px] text-gray-400 mb-4">
+          Paste a signal and let NVIDIA Nemotron extract structured data.
+        </p>
+
+        <div className="space-y-3">
+          <Input
+            value={signalInput}
+            onChange={(e) => setSignalInput(e.target.value)}
+            placeholder="Paste a signal: 'Brandon just shipped ARCHON to prod'..."
+            className="bg-gray-50 border-gray-200 font-mono text-xs h-9 text-gray-700 placeholder:text-gray-300 focus:border-[#c8a96e]/40"
+            data-testid="input-signal-ai"
+            onKeyDown={(e) => e.key === "Enter" && handleSignalSubmit()}
+          />
+          <button
+            onClick={handleSignalSubmit}
+            disabled={signalMutation.isPending || !signalInput.trim()}
+            data-testid="button-process-signal"
+            className="w-full py-2.5 rounded text-white font-mono text-xs tracking-wider transition-colors disabled:opacity-50"
+            style={{ backgroundColor: "#76B900", boxShadow: "inset 0 1px 0 rgba(255,255,255,0.1)" }}
+          >
+            {signalMutation.isPending ? "NVIDIA Nemotron processing..." : "Process Signal"}
+          </button>
+        </div>
+
+        {/* Parsed signal cards */}
+        {signals.length > 0 && (
+          <div className="mt-4 space-y-2" data-testid="signal-results">
+            {signals.map((sig, idx) => (
+              <div key={idx} className="border border-gray-200 rounded-md p-3" data-testid={`signal-card-${idx}`}>
+                <div className="flex items-center justify-between mb-2">
+                  <span className="font-serif text-sm text-gray-900">{sig.subjectName}</span>
+                  <div className="flex items-center gap-2">
+                    <span className={`px-2 py-0.5 rounded-full text-[10px] font-mono border ${signalTypeColor(sig.signalType)}`}>
+                      {sig.signalType}
+                    </span>
+                    <span className="font-mono text-[10px] text-gray-400">{sig.confidence}%</span>
+                  </div>
+                </div>
+                <p className="font-mono text-[11px] text-gray-500">{sig.summary}</p>
+                <p className="font-mono text-[10px] text-gray-400 mt-1">{sig.relevance}</p>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* Original card generator */}
       <div className="bg-white rounded-lg border border-[#E5E7EB] p-8">
         <p className="font-mono text-[10px] text-gray-400 uppercase tracking-[0.15em] mb-2">
-          Signal Box
+          Card Generator
         </p>
         <h3 className="font-serif text-lg text-gray-900 mb-1">
           Paste a company, we turn it into a sovereign-grade card.
@@ -452,31 +580,37 @@ function IngestWidget() {
   const [email, setEmail] = useState("");
   const [linkedin, setLinkedin] = useState("");
   const [progress, setProgress] = useState(-1);
-  const [result, setResult] = useState<{ simulatedQtac7: number } | null>(null);
+  const [result, setResult] = useState<{
+    simulatedQtac7: number;
+    aiProfile?: {
+      estimatedQtac7: number;
+      thesis: string;
+      tags: string[];
+      suggestedStatus: string;
+      metricThatMatters: string;
+      role: string;
+    };
+  } | null>(null);
   const { toast } = useToast();
 
   const steps = [
     "Scanning LinkedIn profile...",
     "Mapping signal graph...",
-    "Running QTAC₇ engine...",
+    "Computing QTAC₇ via NVIDIA Nemotron...",
     "Generating MasterCard draft...",
   ];
 
-  const mutation = useMutation({
+  const leadMutation = useMutation({
     mutationFn: async (data: { email: string; linkedinUrl: string }) => {
       const res = await apiRequest("POST", "/api/leads", data);
       return res.json();
     },
-    onSuccess: (data) => {
-      setResult(data);
-    },
-    onError: (err: Error) => {
-      toast({
-        title: "Error",
-        description: err.message,
-        variant: "destructive",
-      });
-      setProgress(-1);
+  });
+
+  const aiMutation = useMutation({
+    mutationFn: async (data: { email: string; linkedinUrl: string }) => {
+      const res = await apiRequest("POST", "/api/ai/generate-mastercard", data);
+      return res.json();
     },
   });
 
@@ -488,7 +622,18 @@ function IngestWidget() {
       step++;
       if (step >= steps.length) {
         clearInterval(interval);
-        mutation.mutate({ email, linkedinUrl: linkedin });
+        // Fire both calls in parallel
+        const leadP = leadMutation.mutateAsync({ email, linkedinUrl: linkedin });
+        const aiP = aiMutation.mutateAsync({ email, linkedinUrl: linkedin }).catch(() => null);
+        Promise.all([leadP, aiP]).then(([leadData, aiData]) => {
+          setResult({
+            simulatedQtac7: aiData?.estimatedQtac7 ?? leadData.simulatedQtac7,
+            aiProfile: aiData || undefined,
+          });
+        }).catch((err) => {
+          toast({ title: "Error", description: err.message, variant: "destructive" });
+          setProgress(-1);
+        });
       } else {
         setProgress(step);
       }
@@ -496,19 +641,50 @@ function IngestWidget() {
   };
 
   if (result) {
+    const aiProfile = result.aiProfile;
+    const tags: string[] = aiProfile?.tags || [];
     return (
       <div className="bg-white rounded-lg border border-[#E5E7EB] p-6">
-        <p className="font-mono text-[10px] text-gray-400 uppercase tracking-[0.15em] mb-4">
-          Your QTAC₇ Score
-        </p>
+        <div className="flex items-center justify-between mb-4">
+          <p className="font-mono text-[10px] text-gray-400 uppercase tracking-[0.15em]">
+            Your QTAC₇ Score
+          </p>
+          <NvidiaHfBadge />
+        </div>
         <div className="text-center py-4">
           <span className="font-mono text-4xl font-bold text-[#c8a96e]">
             {result.simulatedQtac7.toFixed(1)}
           </span>
-          <p className="font-mono text-[10px] text-gray-400 mt-2">
-            Simulated · Full analysis requires operator ingest
+          {aiProfile && (
+            <p className="font-mono text-[10px] text-gray-500 mt-1">
+              {aiProfile.role} · {aiProfile.suggestedStatus}
+            </p>
+          )}
+          <p className="font-mono text-[10px] text-gray-400 mt-1">
+            {aiProfile ? "AI-generated via NVIDIA Nemotron" : "Simulated · Full analysis requires operator ingest"}
           </p>
         </div>
+        {aiProfile && (
+          <div className="space-y-3 mt-2 mb-4">
+            <div className="border border-gray-200 rounded-md p-3">
+              <p className="font-mono text-[10px] text-gray-400 uppercase tracking-wider mb-1">Thesis</p>
+              <p className="font-mono text-[11px] text-gray-600">{aiProfile.thesis}</p>
+            </div>
+            <div className="border border-gray-200 rounded-md p-3">
+              <p className="font-mono text-[10px] text-gray-400 uppercase tracking-wider mb-1">Metric That Matters</p>
+              <p className="font-mono text-[11px] text-gray-600">{aiProfile.metricThatMatters}</p>
+            </div>
+            {tags.length > 0 && (
+              <div className="flex flex-wrap gap-1.5">
+                {tags.map((tag) => (
+                  <span key={tag} className="px-2 py-0.5 rounded-full font-mono text-[10px] text-gray-500 border border-gray-200">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
         <div className="space-y-2 mt-4">
           <button
             data-testid="button-email-mastercard"
@@ -531,9 +707,12 @@ function IngestWidget() {
 
   return (
     <div className="bg-white rounded-lg border border-[#E5E7EB] p-6">
-      <p className="font-mono text-[10px] text-gray-400 uppercase tracking-[0.15em] mb-1">
-        Ingest Widget
-      </p>
+      <div className="flex items-center justify-between mb-1">
+        <p className="font-mono text-[10px] text-gray-400 uppercase tracking-[0.15em]">
+          Ingest Widget
+        </p>
+        <NvidiaHfBadge />
+      </div>
       <h3 className="font-serif text-base text-gray-900 mb-4">
         Generate your MasterCard in 30 seconds.
       </h3>
@@ -776,9 +955,12 @@ export default function RegistryPage() {
       <div className="relative px-6 md:px-12 pt-8 pb-16 md:pb-24">
         {/* Top bar */}
         <div className="flex items-center justify-between mb-16 md:mb-24">
-          <span className="font-mono text-[10px] text-gray-300 tracking-[0.15em] uppercase">
-            CORTEXCHAIN · HUMAN CAPITAL EXCHANGE
-          </span>
+          <div className="flex items-center gap-3">
+            <span className="font-mono text-[10px] text-gray-300 tracking-[0.15em] uppercase">
+              CORTEXCHAIN · HUMAN CAPITAL EXCHANGE
+            </span>
+            <NvidiaHfBadge />
+          </div>
           <div className="hidden md:flex items-center gap-6">
             {["Masters Registry", "Sovereign Directory", "Signal Box"].map(
               (tab, i) => (

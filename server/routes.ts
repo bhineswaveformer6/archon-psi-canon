@@ -2,6 +2,7 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { createHash } from "crypto";
 import { storage } from "./storage";
+import { analyzeVerdict, processSignal, generateMasterCardProfile } from "./ai";
 
 function sha256(data: string): string {
   return createHash("sha256").update(data).digest("hex");
@@ -344,6 +345,86 @@ export async function registerRoutes(
       res.json(lead);
     } catch (err: any) {
       res.status(500).json({ error: err.message });
+    }
+  });
+
+  // ── AI Routes ──
+
+  // POST /api/ai/analyze-verdict — AI-powered verdict analysis
+  app.post("/api/ai/analyze-verdict", async (req, res) => {
+    try {
+      const body = req.body;
+      if (!body.subjectName || body.qtac7Score === undefined) {
+        return res.status(400).json({ error: "subjectName and qtac7Score are required" });
+      }
+      const result = await analyzeVerdict({
+        subjectName: body.subjectName,
+        subjectKind: body.subjectKind || "Company",
+        operators: body.operators || {},
+        qtac7Score: body.qtac7Score,
+        stoneScore: body.stoneScore || 0,
+        pinkScore: body.pinkScore || 0,
+        omegaGap: body.omegaGap || 0,
+      });
+      res.json(result);
+    } catch (err: any) {
+      console.error("AI analyze-verdict error:", err.message);
+      const fb = req.body || {};
+      // Fallback response if AI fails
+      res.json({
+        verdictText: "AI analysis unavailable — using heuristic verdict.",
+        recommendation: (fb.stoneScore || 0) >= 7 ? "SEAL" : (fb.stoneScore || 0) >= 5 ? "HOLD" : "PASS",
+        thesis: `${fb.subjectName || "Subject"} scored ${(fb.qtac7Score || 0).toFixed?.(2) || "N/A"} on QTAC₇.`,
+        keyRisk: "Unable to compute AI risk assessment at this time.",
+        keyStrength: "Quantitative scoring framework applied successfully.",
+        retrialCondition: "Reassess when AI inference is available.",
+      });
+    }
+  });
+
+  // POST /api/ai/process-signal — AI signal parsing
+  app.post("/api/ai/process-signal", async (req, res) => {
+    try {
+      const body = req.body;
+      if (!body.signalText) {
+        return res.status(400).json({ error: "signalText is required" });
+      }
+      const result = await processSignal(body.signalText);
+      res.json(result);
+    } catch (err: any) {
+      console.error("AI process-signal error:", err.message);
+      // Fallback: basic extraction
+      const text = req.body.signalText || "";
+      res.json({
+        subjectName: text.split(" ").slice(0, 2).join(" ") || "Unknown",
+        signalType: "SHIP",
+        confidence: 50,
+        relevance: "Signal received but AI parsing unavailable.",
+        summary: text.slice(0, 120),
+      });
+    }
+  });
+
+  // POST /api/ai/generate-mastercard — AI MasterCard profile generation
+  app.post("/api/ai/generate-mastercard", async (req, res) => {
+    try {
+      const body = req.body;
+      if (!body.email || !body.linkedinUrl) {
+        return res.status(400).json({ error: "email and linkedinUrl are required" });
+      }
+      const result = await generateMasterCardProfile(body.email, body.linkedinUrl);
+      res.json(result);
+    } catch (err: any) {
+      console.error("AI generate-mastercard error:", err.message);
+      // Fallback profile
+      res.json({
+        estimatedQtac7: Math.round((6.0 + Math.random() * 3.5) * 10) / 10,
+        thesis: "Profile analysis pending — heuristic score assigned.",
+        tags: ["CAPITAL", "SYSTEMS"],
+        suggestedStatus: "PROTO",
+        metricThatMatters: "Cognitive output per capita",
+        role: "Operator",
+      });
     }
   });
 

@@ -1,7 +1,7 @@
 import { useState, useMemo, useCallback } from "react";
 import { useMutation } from "@tanstack/react-query";
 import { useLocation } from "wouter";
-import { ChevronDown, ChevronRight, Shield, Lock } from "lucide-react";
+import { ChevronDown, ChevronRight, Shield, Lock, Loader2, Zap } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
@@ -9,6 +9,35 @@ import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest, queryClient } from "@/lib/queryClient";
+
+// ── NVIDIA × Hugging Face Badge ──
+function NvidiaHfBadge() {
+  return (
+    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded border border-border/50 bg-background/50" data-testid="badge-nvidia-hf">
+      <span className="font-mono text-[9px] text-muted-foreground">Powered by</span>
+      {/* NVIDIA icon (simplified eye mark) */}
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-label="NVIDIA">
+        <path d="M9.04 8.08C11.8 7.76 13.72 9.4 13.72 9.4S12.08 11.4 9.56 11.4C7.96 11.4 6.84 10.32 6.84 9.12C6.84 8.36 7.48 8.16 9.04 8.08Z" fill="#76B900"/>
+        <path d="M9.2 6.52C12.88 5.96 15.84 8.2 15.84 8.2S13.48 12.04 9.28 12.04C6.6 12.04 4.8 10.24 4.8 8.4C4.8 6.96 6.16 6.56 9.2 6.52Z" fill="#76B900" opacity="0.6"/>
+        <path d="M9.36 4.96C14 4.12 17.96 7 17.96 7S14.88 12.68 9 12.68C5.24 12.68 2.76 10.16 2.76 7.68C2.76 5.56 4.76 4.96 9.36 4.96Z" fill="#76B900" opacity="0.3"/>
+        <path d="M3 14.5V17.5H5V15.5H6V17.5H8V14.5H3Z" fill="#76B900"/>
+        <path d="M9 14.5L10.5 17.5H12.5L14 14.5H12L11.5 16L11 14.5H9Z" fill="#76B900"/>
+        <path d="M15 14.5V17.5H17V14.5H15Z" fill="#76B900"/>
+        <path d="M18 14.5V17.5H20V16H21V17.5H22V14.5H18Z" fill="#76B900" opacity="0.8"/>
+      </svg>
+      <span className="font-mono text-[9px] font-semibold" style={{ color: "#76B900" }}>NVIDIA</span>
+      <span className="font-mono text-[9px] text-muted-foreground mx-0.5">×</span>
+      {/* HF icon (simplified face mark) */}
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-label="Hugging Face">
+        <circle cx="12" cy="12" r="10" fill="#FFD21E" opacity="0.15"/>
+        <circle cx="9" cy="10" r="1.5" fill="#FFD21E"/>
+        <circle cx="15" cy="10" r="1.5" fill="#FFD21E"/>
+        <path d="M8 14.5C8 14.5 9.5 17 12 17C14.5 17 16 14.5 16 14.5" stroke="#FFD21E" strokeWidth="1.5" strokeLinecap="round"/>
+      </svg>
+      <span className="font-mono text-[9px] font-semibold" style={{ color: "#FFD21E" }}>HF</span>
+    </div>
+  );
+}
 
 // ────────────────────────────────────────────────────────
 // Operator types
@@ -162,6 +191,42 @@ export default function CalculatorPage() {
     };
   }, [business, economics, compounding, floatOps, people, errors]);
 
+  // AI analysis state
+  const [aiVerdict, setAiVerdict] = useState<{
+    verdictText: string;
+    recommendation: string;
+    thesis: string;
+    keyRisk: string;
+    keyStrength: string;
+    retrialCondition: string;
+  } | null>(null);
+
+  // AI analysis mutation
+  const aiMutation = useMutation({
+    mutationFn: async () => {
+      const body = {
+        subjectName,
+        subjectKind,
+        operators: { business, economics, compounding, float: floatOps, people, errors },
+        qtac7Score: scores.qtac7,
+        stoneScore: scores.stoneScore,
+        pinkScore: scores.PINK,
+        omegaGap: scores.omegaGap,
+      };
+      const res = await apiRequest("POST", "/api/ai/analyze-verdict", body);
+      return res.json();
+    },
+    onSuccess: (data) => {
+      setAiVerdict(data);
+      toast({ title: "AI Analysis Complete", description: `Recommendation: ${data.recommendation}` });
+    },
+    onError: (err: Error) => {
+      toast({ title: "AI Analysis Failed", description: err.message, variant: "destructive" });
+    },
+  });
+
+  const canAnalyze = subjectName.length > 0 && scores.qtac7 > 0;
+
   // Seal mutation
   const sealMutation = useMutation({
     mutationFn: async () => {
@@ -183,8 +248,8 @@ export default function CalculatorPage() {
         dimValuation: scores.dimValuation,
         dimRisk: scores.dimRisk,
         stoneScore: scores.stoneScore,
-        verdictText: scores.verdictText,
-        recommendation: scores.recommendation,
+        verdictText: aiVerdict?.verdictText || scores.verdictText,
+        recommendation: aiVerdict?.recommendation === "SEAL" ? "BUY" : aiVerdict?.recommendation === "PASS" ? "SELL" : aiVerdict?.recommendation || scores.recommendation,
       };
       const res = await apiRequest("POST", "/api/verdicts", body);
       return res.json();
@@ -434,6 +499,74 @@ export default function CalculatorPage() {
           </span>
         </div>
       </div>
+
+      {/* AI Analysis Section */}
+      {canAnalyze && (
+        <div className="border border-border rounded-lg bg-card p-5 space-y-4" data-testid="ai-analysis-section">
+          <div className="flex items-center justify-between">
+            <div>
+              <h2 className="font-serif italic text-base text-foreground">AI Verdict Engine</h2>
+              <p className="font-mono text-[10px] text-muted-foreground mt-0.5">
+                NVIDIA Nemotron × Hugging Face Inference
+              </p>
+            </div>
+            <NvidiaHfBadge />
+          </div>
+
+          <Button
+            onClick={() => aiMutation.mutate()}
+            disabled={aiMutation.isPending}
+            className="w-full h-10 font-mono text-xs tracking-wider bg-[#76B900]/90 text-white hover:bg-[#76B900] dark:bg-[#76B900]/80 dark:hover:bg-[#76B900]"
+            data-testid="button-ai-analyze"
+          >
+            {aiMutation.isPending ? (
+              <>
+                <Loader2 size={14} className="mr-2 animate-spin" />
+                NVIDIA Nemotron analyzing...
+              </>
+            ) : (
+              <>
+                <Zap size={14} className="mr-2" />
+                Generate AI Analysis
+              </>
+            )}
+          </Button>
+
+          {aiVerdict && (
+            <div className="space-y-3 border-t border-border pt-4" data-testid="ai-verdict-result">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <div className="border border-border rounded-md p-3">
+                  <p className="font-mono text-[10px] text-muted-foreground uppercase tracking-wider mb-1">Thesis</p>
+                  <p className="font-mono text-xs text-foreground">{aiVerdict.thesis}</p>
+                </div>
+                <div className="border border-border rounded-md p-3">
+                  <p className="font-mono text-[10px] text-muted-foreground uppercase tracking-wider mb-1">Recommendation</p>
+                  <p className={`font-mono text-sm font-semibold ${
+                    aiVerdict.recommendation === "SEAL" ? "text-green-400" :
+                    aiVerdict.recommendation === "PASS" ? "text-red-400" : "text-primary"
+                  }`}>{aiVerdict.recommendation}</p>
+                </div>
+                <div className="border border-border rounded-md p-3">
+                  <p className="font-mono text-[10px] text-muted-foreground uppercase tracking-wider mb-1">Key Strength</p>
+                  <p className="font-mono text-xs text-foreground">{aiVerdict.keyStrength}</p>
+                </div>
+                <div className="border border-border rounded-md p-3">
+                  <p className="font-mono text-[10px] text-muted-foreground uppercase tracking-wider mb-1">Key Risk</p>
+                  <p className="font-mono text-xs text-foreground">{aiVerdict.keyRisk}</p>
+                </div>
+              </div>
+              <div className="border border-border rounded-md p-3">
+                <p className="font-mono text-[10px] text-muted-foreground uppercase tracking-wider mb-1">Verdict</p>
+                <p className="font-serif text-sm text-foreground italic">{aiVerdict.verdictText}</p>
+              </div>
+              <div className="border border-border rounded-md p-3">
+                <p className="font-mono text-[10px] text-muted-foreground uppercase tracking-wider mb-1">Retrial Condition</p>
+                <p className="font-mono text-xs text-foreground">{aiVerdict.retrialCondition}</p>
+              </div>
+            </div>
+          )}
+        </div>
+      )}
 
       {/* Seal Button */}
       <Button
