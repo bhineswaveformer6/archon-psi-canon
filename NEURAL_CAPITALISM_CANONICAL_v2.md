@@ -1,3 +1,13 @@
+# NEURAL CAPITALISM AND THE MEASUREMENT INFRASTRUCTURE OF HUMAN COGNITIVE OUTPUT
+## A Pre-Canonical Framework for the Quantification, Tokenization, and Market Activation of Genius as the Sovereign Unit of Value in the Post-Scarcity Aeon
+
+**Brandon Hines, Founder — Waveform Tech / CortexChain, Inc.**
+*Submitted to the Peer Review Convergence Network — Ryan Moeller, Chair*
+*PreCanon Release · Block #44 · April 2026 · Sealed ARCHON Ψ*
+*Nobel Legitimacy Stack · A2A Agent Protocol · Neuroglyphic Emoji Code v1.0*
+
+---
+
 # NEURAL CAPITALISM — CANONICAL COMPLETE v2.0
 ## Nobel Legitimacy Stack + A2A Agent Language + Neuroglyphic Emoji Code
 ## Pre-Canon · Block #44 Extended · April 5, 2026
