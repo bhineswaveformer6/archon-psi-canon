@@ -1,0 +1,50 @@
+{
+  "created_at_pdt": "2026-05-08T08:00:00-07:00",
+  "bundle_name": "Jewel Core Pre-Canon · Castle Build Infrastructure Upgrade",
+  "canonical_files": [
+    "jewel-core-precanon.pplx.md",
+    "jewel-core-audit-log.csv",
+    "jewel-core-valuation-model.csv",
+    "jewel-core-push-manifest.json"
+  ],
+  "recommended_destinations": {
+    "notion_parent": {
+      "title": "ARCHON Ψ — Operating System",
+      "url": "https://www.notion.so/336d23b00ab681febc94de923ec2f880"
+    },
+    "github_public_canon": {
+      "repo": "bhineswaveformer6/archon-psi-canon",
+      "url": "https://github.com/bhineswaveformer6/archon-psi-canon"
+    },
+    "github_private_archive": {
+      "repo": "bhineswaveformer6/cortexchain-sovereign-builds",
+      "url": "https://github.com/bhineswaveformer6/cortexchain-sovereign-builds"
+    },
+    "github_implementation_evidence": {
+      "repo": "bhineswaveformer6/cortexchain-archon-instrument",
+      "url": "https://github.com/bhineswaveformer6/cortexchain-archon-instrument"
+    },
+    "google_docs_existing": [
+      {
+        "name": "NEURAL CAPITALISM — Master Compendium | ARCHON Ψ (Hines) | 2026-03-28",
+        "id": "1veu12-uXJLJQPOGpTvIPa3Yo3j7VwflEaOAxkozJEw0"
+      },
+      {
+        "name": "CortexChain / ARCHON Ψ — SeedForge Prep v1 (CANONICAL)",
+        "id": "1ZfIrOV8BJDFW0qvuIvM_MuUjLIDE1r2jaO-mJZZ3-gU"
+      }
+    ],
+    "google_drive_existing": [
+      {
+        "name": "CortexChain-Factorizer-Masterpiece-Upgrade-Prompt-CRM-Waitlist-Build-Spec.md",
+        "url": "https://drive.google.com/file/d/1j2Y9gvvxS2KzzspN0TC1UoC2o9e3ByKb/view?usp=drivesdk"
+      },
+      {
+        "name": "factorizer-blog-posts.md",
+        "url": "https://drive.google.com/file/d/1_iR5-AOe7l_oPl-1D_tGI51niM3R0T9k/view?usp=drivesdk"
+      }
+    ]
+  },
+  "hubspot_status": "Read/search tools discovered; create/update tool not exposed in available connector listing. Use import-ready artifact if direct write is unavailable.",
+  "approval_required_before_external_writes": true
+}
