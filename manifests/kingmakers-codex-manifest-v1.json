@@ -1,0 +1,52 @@
+{
+  "$id": "urn:cortexchain:canon-ledger:kingmakers-codex:manifest:v1",
+  "schema_version": "1.0",
+  "treasury_class": "L-04",
+  "sealed_at": "2026-05-15",
+  "architect": "Psi-001 / Brandon Mark Hines",
+  "house": "House of Orange / ARCHON Psi Atelier",
+  "lifecycle_state": "SETTLED",
+  "artifacts": {
+    "phase_c_deck": {
+      "id": "cmp8l6hzo23bf06adnzpnavc2",
+      "function": "navigable_synopsis",
+      "type": "slides"
+    },
+    "monument": {
+      "id": "cmp8mfv5j248o06adzlifs03v",
+      "function": "ledger_surface",
+      "type": "webpage"
+    },
+    "canon_index_card": {
+      "id": "cmp8mqj1r21jl07adt5cmictc",
+      "function": "directory_provenance_anchor",
+      "type": "webpage"
+    }
+  },
+  "substrate": [
+    "kingmakers_codex_sceptres.md",
+    "kingmakers_codex_crowns.md",
+    "kingmakers_codex_20_thrones.md",
+    "kingmakers_maxims.md",
+    "atelier-svg-primitives-v2-0.html"
+  ],
+  "issuance_chain": "X -> S-hat -> Q -> L -> C -> I -> P",
+  "lifecycle_path": "DRAFT -> PROBATION -> SEALED -> ISSUED -> ATTESTED -> SETTLED",
+  "object_count": 60,
+  "maxim_count": 100,
+  "primitive_count_v2_1": 3,
+  "validator_hygiene_v1_1": {
+    "allowlist_tokens": [
+      "Hyperagent"
+    ],
+    "allowlist_css_properties": [
+      "drop-shadow"
+    ],
+    "publish_order_rule": "locked_sequence_preferred_unless_explicitly_overridden"
+  },
+  "provenance": {
+    "prev_hash": null,
+    "hash_algo": "sha256",
+    "this_hash": "35781895e6e414dc809158b8817674411671a5ab4ee71342111be48d74d82e05"
+  }
+}
