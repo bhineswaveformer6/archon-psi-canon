@@ -1,0 +1,976 @@
+{
+  "$id": "urn:cortexchain:a-money:currents:seed-24:v1",
+  "schema_version": "1.0",
+  "lane": "A-MONEY",
+  "season": "VOLTS-2026Q2",
+  "sealed_at": "2026-05-16",
+  "architect": "Psi-001 / Brandon Mark Hines",
+  "lane_status": "OPEN_AS_OF_SEED_24",
+  "scoring": {
+    "axes": [
+      "compression",
+      "constraint_power",
+      "auditability",
+      "transferability",
+      "dominance",
+      "sovereignty"
+    ],
+    "axis_weights": {
+      "compression": 0.15,
+      "constraint_power": 0.2,
+      "auditability": 0.2,
+      "transferability": 0.15,
+      "dominance": 0.1,
+      "sovereignty": 0.2
+    },
+    "composite_formula": "weighted_sum_axes_in_[0,100]"
+  },
+  "day_crown_rule": "top_6_per_day = 3_OldWorld + 3_NewWorld by composite + 1_novelty_slot",
+  "six_word_chain_governance": [
+    "WORD",
+    "LOG",
+    "CONTEXT",
+    "CHALLENGE",
+    "EVIDENCE",
+    "RATIFY"
+  ],
+  "currents_count": 24,
+  "currents": [
+    {
+      "currens": {
+        "lemma": "SEAL",
+        "surface_forms": [
+          "seal",
+          "sealed",
+          "sealing",
+          "seals"
+        ],
+        "category": "Governance",
+        "register": "OldWorld",
+        "status": "DRAFT",
+        "season": "VOLTS-2026Q2"
+      },
+      "six_word_chain": {
+        "word": true,
+        "log": {
+          "event_id": null,
+          "prev_hash": null
+        },
+        "context": [],
+        "challenge": [],
+        "evidence": [],
+        "ratify": {
+          "decision": null,
+          "by": null,
+          "timestamp": null
+        }
+      },
+      "scores": {
+        "compression": 78,
+        "constraint_power": 92,
+        "auditability": 88,
+        "transferability": 80,
+        "dominance": 86,
+        "sovereignty": 90,
+        "composite": 86.3
+      }
+    },
+    {
+      "currens": {
+        "lemma": "WITNESS",
+        "surface_forms": [
+          "witness",
+          "witnessed",
+          "witnessing",
+          "witnesses"
+        ],
+        "category": "Proof",
+        "register": "OldWorld",
+        "status": "DRAFT",
+        "season": "VOLTS-2026Q2"
+      },
+      "six_word_chain": {
+        "word": true,
+        "log": {
+          "event_id": null,
+          "prev_hash": null
+        },
+        "context": [],
+        "challenge": [],
+        "evidence": [],
+        "ratify": {
+          "decision": null,
+          "by": null,
+          "timestamp": null
+        }
+      },
+      "scores": {
+        "compression": 74,
+        "constraint_power": 85,
+        "auditability": 92,
+        "transferability": 78,
+        "dominance": 80,
+        "sovereignty": 82,
+        "composite": 82.6
+      }
+    },
+    {
+      "currens": {
+        "lemma": "PROVENANCE",
+        "surface_forms": [
+          "provenance",
+          "proveniences"
+        ],
+        "category": "Custody",
+        "register": "OldWorld",
+        "status": "DRAFT",
+        "season": "VOLTS-2026Q2"
+      },
+      "six_word_chain": {
+        "word": true,
+        "log": {
+          "event_id": null,
+          "prev_hash": null
+        },
+        "context": [],
+        "challenge": [],
+        "evidence": [],
+        "ratify": {
+          "decision": null,
+          "by": null,
+          "timestamp": null
+        }
+      },
+      "scores": {
+        "compression": 66,
+        "constraint_power": 80,
+        "auditability": 94,
+        "transferability": 76,
+        "dominance": 78,
+        "sovereignty": 84,
+        "composite": 80.7
+      }
+    },
+    {
+      "currens": {
+        "lemma": "WRIT",
+        "surface_forms": [
+          "writ",
+          "writs",
+          "written",
+          "write"
+        ],
+        "category": "Governance",
+        "register": "OldWorld",
+        "status": "DRAFT",
+        "season": "VOLTS-2026Q2"
+      },
+      "six_word_chain": {
+        "word": true,
+        "log": {
+          "event_id": null,
+          "prev_hash": null
+        },
+        "context": [],
+        "challenge": [],
+        "evidence": [],
+        "ratify": {
+          "decision": null,
+          "by": null,
+          "timestamp": null
+        }
+      },
+      "scores": {
+        "compression": 72,
+        "constraint_power": 88,
+        "auditability": 86,
+        "transferability": 74,
+        "dominance": 77,
+        "sovereignty": 88,
+        "composite": 82.0
+      }
+    },
+    {
+      "currens": {
+        "lemma": "COUNCIL",
+        "surface_forms": [
+          "council",
+          "councils",
+          "councillor",
+          "councilman"
+        ],
+        "category": "Governance",
+        "register": "OldWorld",
+        "status": "DRAFT",
+        "season": "VOLTS-2026Q2"
+      },
+      "six_word_chain": {
+        "word": true,
+        "log": {
+          "event_id": null,
+          "prev_hash": null
+        },
+        "context": [],
+        "challenge": [],
+        "evidence": [],
+        "ratify": {
+          "decision": null,
+          "by": null,
+          "timestamp": null
+        }
+      },
+      "scores": {
+        "compression": 64,
+        "constraint_power": 83,
+        "auditability": 70,
+        "transferability": 76,
+        "dominance": 68,
+        "sovereignty": 86,
+        "composite": 75.6
+      }
+    },
+    {
+      "currens": {
+        "lemma": "OATH",
+        "surface_forms": [
+          "oath",
+          "oaths",
+          "oathbound"
+        ],
+        "category": "Risk",
+        "register": "OldWorld",
+        "status": "DRAFT",
+        "season": "VOLTS-2026Q2"
+      },
+      "six_word_chain": {
+        "word": true,
+        "log": {
+          "event_id": null,
+          "prev_hash": null
+        },
+        "context": [],
+        "challenge": [],
+        "evidence": [],
+        "ratify": {
+          "decision": null,
+          "by": null,
+          "timestamp": null
+        }
+      },
+      "scores": {
+        "compression": 70,
+        "constraint_power": 86,
+        "auditability": 62,
+        "transferability": 72,
+        "dominance": 74,
+        "sovereignty": 90,
+        "composite": 76.3
+      }
+    },
+    {
+      "currens": {
+        "lemma": "CHARTER",
+        "surface_forms": [
+          "charter",
+          "chartered",
+          "chartering",
+          "charters"
+        ],
+        "category": "Governance",
+        "register": "OldWorld",
+        "status": "DRAFT",
+        "season": "VOLTS-2026Q2"
+      },
+      "six_word_chain": {
+        "word": true,
+        "log": {
+          "event_id": null,
+          "prev_hash": null
+        },
+        "context": [],
+        "challenge": [],
+        "evidence": [],
+        "ratify": {
+          "decision": null,
+          "by": null,
+          "timestamp": null
+        }
+      },
+      "scores": {
+        "compression": 62,
+        "constraint_power": 84,
+        "auditability": 80,
+        "transferability": 70,
+        "dominance": 66,
+        "sovereignty": 86,
+        "composite": 76.4
+      }
+    },
+    {
+      "currens": {
+        "lemma": "CUSTODY",
+        "surface_forms": [
+          "custody",
+          "custodies",
+          "custodian",
+          "custodial"
+        ],
+        "category": "Custody",
+        "register": "OldWorld",
+        "status": "DRAFT",
+        "season": "VOLTS-2026Q2"
+      },
+      "six_word_chain": {
+        "word": true,
+        "log": {
+          "event_id": null,
+          "prev_hash": null
+        },
+        "context": [],
+        "challenge": [],
+        "evidence": [],
+        "ratify": {
+          "decision": null,
+          "by": null,
+          "timestamp": null
+        }
+      },
+      "scores": {
+        "compression": 60,
+        "constraint_power": 78,
+        "auditability": 90,
+        "transferability": 72,
+        "dominance": 70,
+        "sovereignty": 80,
+        "composite": 76.4
+      }
+    },
+    {
+      "currens": {
+        "lemma": "LEDGER",
+        "surface_forms": [
+          "ledger",
+          "ledgers",
+          "ledgering",
+          "ledgered"
+        ],
+        "category": "Measure",
+        "register": "OldWorld",
+        "status": "DRAFT",
+        "season": "VOLTS-2026Q2"
+      },
+      "six_word_chain": {
+        "word": true,
+        "log": {
+          "event_id": null,
+          "prev_hash": null
+        },
+        "context": [],
+        "challenge": [],
+        "evidence": [],
+        "ratify": {
+          "decision": null,
+          "by": null,
+          "timestamp": null
+        }
+      },
+      "scores": {
+        "compression": 68,
+        "constraint_power": 82,
+        "auditability": 88,
+        "transferability": 78,
+        "dominance": 76,
+        "sovereignty": 84,
+        "composite": 80.3
+      }
+    },
+    {
+      "currens": {
+        "lemma": "RESERVE",
+        "surface_forms": [
+          "reserve",
+          "reserved",
+          "reserving",
+          "reserves"
+        ],
+        "category": "Value",
+        "register": "OldWorld",
+        "status": "DRAFT",
+        "season": "VOLTS-2026Q2"
+      },
+      "six_word_chain": {
+        "word": true,
+        "log": {
+          "event_id": null,
+          "prev_hash": null
+        },
+        "context": [],
+        "challenge": [],
+        "evidence": [],
+        "ratify": {
+          "decision": null,
+          "by": null,
+          "timestamp": null
+        }
+      },
+      "scores": {
+        "compression": 58,
+        "constraint_power": 80,
+        "auditability": 72,
+        "transferability": 74,
+        "dominance": 70,
+        "sovereignty": 82,
+        "composite": 73.6
+      }
+    },
+    {
+      "currens": {
+        "lemma": "THRESHOLD",
+        "surface_forms": [
+          "threshold",
+          "thresholds"
+        ],
+        "category": "Measure",
+        "register": "OldWorld",
+        "status": "DRAFT",
+        "season": "VOLTS-2026Q2"
+      },
+      "six_word_chain": {
+        "word": true,
+        "log": {
+          "event_id": null,
+          "prev_hash": null
+        },
+        "context": [],
+        "challenge": [],
+        "evidence": [],
+        "ratify": {
+          "decision": null,
+          "by": null,
+          "timestamp": null
+        }
+      },
+      "scores": {
+        "compression": 56,
+        "constraint_power": 76,
+        "auditability": 78,
+        "transferability": 80,
+        "dominance": 68,
+        "sovereignty": 78,
+        "composite": 73.6
+      }
+    },
+    {
+      "currens": {
+        "lemma": "CANON",
+        "surface_forms": [
+          "canon",
+          "canons",
+          "canonical",
+          "canonize"
+        ],
+        "category": "Governance",
+        "register": "OldWorld",
+        "status": "DRAFT",
+        "season": "VOLTS-2026Q2"
+      },
+      "six_word_chain": {
+        "word": true,
+        "log": {
+          "event_id": null,
+          "prev_hash": null
+        },
+        "context": [],
+        "challenge": [],
+        "evidence": [],
+        "ratify": {
+          "decision": null,
+          "by": null,
+          "timestamp": null
+        }
+      },
+      "scores": {
+        "compression": 64,
+        "constraint_power": 84,
+        "auditability": 74,
+        "transferability": 76,
+        "dominance": 72,
+        "sovereignty": 86,
+        "composite": 77.0
+      }
+    },
+    {
+      "currens": {
+        "lemma": "BLUEPRINT",
+        "surface_forms": [
+          "blueprint",
+          "blueprinted",
+          "blueprints",
+          "blueprinting"
+        ],
+        "category": "Governance",
+        "register": "NewWorld",
+        "status": "DRAFT",
+        "season": "VOLTS-2026Q2"
+      },
+      "six_word_chain": {
+        "word": true,
+        "log": {
+          "event_id": null,
+          "prev_hash": null
+        },
+        "context": [],
+        "challenge": [],
+        "evidence": [],
+        "ratify": {
+          "decision": null,
+          "by": null,
+          "timestamp": null
+        }
+      },
+      "scores": {
+        "compression": 62,
+        "constraint_power": 86,
+        "auditability": 82,
+        "transferability": 90,
+        "dominance": 78,
+        "sovereignty": 84,
+        "composite": 81.0
+      }
+    },
+    {
+      "currens": {
+        "lemma": "PROTOCOL",
+        "surface_forms": [
+          "protocol",
+          "protocols",
+          "protocolize",
+          "protocolar"
+        ],
+        "category": "Governance",
+        "register": "NewWorld",
+        "status": "DRAFT",
+        "season": "VOLTS-2026Q2"
+      },
+      "six_word_chain": {
+        "word": true,
+        "log": {
+          "event_id": null,
+          "prev_hash": null
+        },
+        "context": [],
+        "challenge": [],
+        "evidence": [],
+        "ratify": {
+          "decision": null,
+          "by": null,
+          "timestamp": null
+        }
+      },
+      "scores": {
+        "compression": 58,
+        "constraint_power": 88,
+        "auditability": 84,
+        "transferability": 88,
+        "dominance": 76,
+        "sovereignty": 78,
+        "composite": 79.5
+      }
+    },
+    {
+      "currens": {
+        "lemma": "SCHEMA",
+        "surface_forms": [
+          "schema",
+          "schemas",
+          "schemata",
+          "schematic"
+        ],
+        "category": "Measure",
+        "register": "NewWorld",
+        "status": "DRAFT",
+        "season": "VOLTS-2026Q2"
+      },
+      "six_word_chain": {
+        "word": true,
+        "log": {
+          "event_id": null,
+          "prev_hash": null
+        },
+        "context": [],
+        "challenge": [],
+        "evidence": [],
+        "ratify": {
+          "decision": null,
+          "by": null,
+          "timestamp": null
+        }
+      },
+      "scores": {
+        "compression": 66,
+        "constraint_power": 80,
+        "auditability": 86,
+        "transferability": 86,
+        "dominance": 74,
+        "sovereignty": 78,
+        "composite": 79.0
+      }
+    },
+    {
+      "currens": {
+        "lemma": "TRACE",
+        "surface_forms": [
+          "trace",
+          "traced",
+          "tracing",
+          "traces"
+        ],
+        "category": "Custody",
+        "register": "NewWorld",
+        "status": "DRAFT",
+        "season": "VOLTS-2026Q2"
+      },
+      "six_word_chain": {
+        "word": true,
+        "log": {
+          "event_id": null,
+          "prev_hash": null
+        },
+        "context": [],
+        "challenge": [],
+        "evidence": [],
+        "ratify": {
+          "decision": null,
+          "by": null,
+          "timestamp": null
+        }
+      },
+      "scores": {
+        "compression": 72,
+        "constraint_power": 76,
+        "auditability": 90,
+        "transferability": 84,
+        "dominance": 70,
+        "sovereignty": 74,
+        "composite": 78.4
+      }
+    },
+    {
+      "currens": {
+        "lemma": "VERIFIABLE",
+        "surface_forms": [
+          "verifiable",
+          "verifiability",
+          "verify",
+          "verified"
+        ],
+        "category": "Proof",
+        "register": "NewWorld",
+        "status": "DRAFT",
+        "season": "VOLTS-2026Q2"
+      },
+      "six_word_chain": {
+        "word": true,
+        "log": {
+          "event_id": null,
+          "prev_hash": null
+        },
+        "context": [],
+        "challenge": [],
+        "evidence": [],
+        "ratify": {
+          "decision": null,
+          "by": null,
+          "timestamp": null
+        }
+      },
+      "scores": {
+        "compression": 50,
+        "constraint_power": 82,
+        "auditability": 92,
+        "transferability": 86,
+        "dominance": 72,
+        "sovereignty": 72,
+        "composite": 76.8
+      }
+    },
+    {
+      "currens": {
+        "lemma": "SIGNAL",
+        "surface_forms": [
+          "signal",
+          "signaled",
+          "signaling",
+          "signals"
+        ],
+        "category": "Measure",
+        "register": "NewWorld",
+        "status": "DRAFT",
+        "season": "VOLTS-2026Q2"
+      },
+      "six_word_chain": {
+        "word": true,
+        "log": {
+          "event_id": null,
+          "prev_hash": null
+        },
+        "context": [],
+        "challenge": [],
+        "evidence": [],
+        "ratify": {
+          "decision": null,
+          "by": null,
+          "timestamp": null
+        }
+      },
+      "scores": {
+        "compression": 76,
+        "constraint_power": 70,
+        "auditability": 72,
+        "transferability": 90,
+        "dominance": 68,
+        "sovereignty": 70,
+        "composite": 74.1
+      }
+    },
+    {
+      "currens": {
+        "lemma": "CONSTRAINT",
+        "surface_forms": [
+          "constraint",
+          "constraints",
+          "constrain",
+          "constrained"
+        ],
+        "category": "Risk",
+        "register": "NewWorld",
+        "status": "DRAFT",
+        "season": "VOLTS-2026Q2"
+      },
+      "six_word_chain": {
+        "word": true,
+        "log": {
+          "event_id": null,
+          "prev_hash": null
+        },
+        "context": [],
+        "challenge": [],
+        "evidence": [],
+        "ratify": {
+          "decision": null,
+          "by": null,
+          "timestamp": null
+        }
+      },
+      "scores": {
+        "compression": 62,
+        "constraint_power": 90,
+        "auditability": 78,
+        "transferability": 84,
+        "dominance": 80,
+        "sovereignty": 76,
+        "composite": 78.7
+      }
+    },
+    {
+      "currens": {
+        "lemma": "INVARIANT",
+        "surface_forms": [
+          "invariant",
+          "invariants",
+          "invariance",
+          "invariantly"
+        ],
+        "category": "Risk",
+        "register": "NewWorld",
+        "status": "DRAFT",
+        "season": "VOLTS-2026Q2"
+      },
+      "six_word_chain": {
+        "word": true,
+        "log": {
+          "event_id": null,
+          "prev_hash": null
+        },
+        "context": [],
+        "challenge": [],
+        "evidence": [],
+        "ratify": {
+          "decision": null,
+          "by": null,
+          "timestamp": null
+        }
+      },
+      "scores": {
+        "compression": 54,
+        "constraint_power": 92,
+        "auditability": 84,
+        "transferability": 82,
+        "dominance": 78,
+        "sovereignty": 80,
+        "composite": 79.4
+      }
+    },
+    {
+      "currens": {
+        "lemma": "ATTEMPT",
+        "surface_forms": [
+          "attempt",
+          "attempted",
+          "attempting",
+          "attempts"
+        ],
+        "category": "Agency",
+        "register": "NewWorld",
+        "status": "DRAFT",
+        "season": "VOLTS-2026Q2"
+      },
+      "six_word_chain": {
+        "word": true,
+        "log": {
+          "event_id": null,
+          "prev_hash": null
+        },
+        "context": [],
+        "challenge": [],
+        "evidence": [],
+        "ratify": {
+          "decision": null,
+          "by": null,
+          "timestamp": null
+        }
+      },
+      "scores": {
+        "compression": 74,
+        "constraint_power": 68,
+        "auditability": 70,
+        "transferability": 80,
+        "dominance": 66,
+        "sovereignty": 72,
+        "composite": 71.7
+      }
+    },
+    {
+      "currens": {
+        "lemma": "ITERATE",
+        "surface_forms": [
+          "iterate",
+          "iterated",
+          "iterating",
+          "iterations"
+        ],
+        "category": "Agency",
+        "register": "NewWorld",
+        "status": "DRAFT",
+        "season": "VOLTS-2026Q2"
+      },
+      "six_word_chain": {
+        "word": true,
+        "log": {
+          "event_id": null,
+          "prev_hash": null
+        },
+        "context": [],
+        "challenge": [],
+        "evidence": [],
+        "ratify": {
+          "decision": null,
+          "by": null,
+          "timestamp": null
+        }
+      },
+      "scores": {
+        "compression": 72,
+        "constraint_power": 66,
+        "auditability": 68,
+        "transferability": 84,
+        "dominance": 64,
+        "sovereignty": 74,
+        "composite": 71.4
+      }
+    },
+    {
+      "currens": {
+        "lemma": "AUDIT",
+        "surface_forms": [
+          "audit",
+          "audited",
+          "auditing",
+          "audits"
+        ],
+        "category": "Proof",
+        "register": "NewWorld",
+        "status": "DRAFT",
+        "season": "VOLTS-2026Q2"
+      },
+      "six_word_chain": {
+        "word": true,
+        "log": {
+          "event_id": null,
+          "prev_hash": null
+        },
+        "context": [],
+        "challenge": [],
+        "evidence": [],
+        "ratify": {
+          "decision": null,
+          "by": null,
+          "timestamp": null
+        }
+      },
+      "scores": {
+        "compression": 70,
+        "constraint_power": 84,
+        "auditability": 94,
+        "transferability": 86,
+        "dominance": 80,
+        "sovereignty": 76,
+        "composite": 82.2
+      }
+    },
+    {
+      "currens": {
+        "lemma": "ALIGNMENT",
+        "surface_forms": [
+          "alignment",
+          "aligned",
+          "alignments",
+          "align"
+        ],
+        "category": "Governance",
+        "register": "NewWorld",
+        "status": "DRAFT",
+        "season": "VOLTS-2026Q2"
+      },
+      "six_word_chain": {
+        "word": true,
+        "log": {
+          "event_id": null,
+          "prev_hash": null
+        },
+        "context": [],
+        "challenge": [],
+        "evidence": [],
+        "ratify": {
+          "decision": null,
+          "by": null,
+          "timestamp": null
+        }
+      },
+      "scores": {
+        "compression": 52,
+        "constraint_power": 78,
+        "auditability": 66,
+        "transferability": 82,
+        "dominance": 62,
+        "sovereignty": 70,
+        "composite": 69.1
+      }
+    }
+  ],
+  "provenance": {
+    "prev_hash": null,
+    "hash_algo": "sha256",
+    "this_hash": "68ef1c2a6a0b25b954b2cf30d9cf29d23d72724b10118c6b59d05532056ebd44"
+  }
+}
