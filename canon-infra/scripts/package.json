@@ -1,0 +1,4 @@
+{
+  "type": "commonjs",
+  "_comment": "Scoped CommonJS declaration for canon-infra scripts. Overrides the repo-root package.json (which sets type=module) for files under canon-infra/scripts/. The attestation script uses require() and is CommonJS by design."
+}
