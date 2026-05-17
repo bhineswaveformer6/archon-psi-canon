@@ -1,0 +1,58 @@
+{
+  "$id": "urn:cortexchain:canon-ledger:cross-workspace-anchors:manifest:v1",
+  "schema_version": "1.0",
+  "name": "CROSS_WORKSPACE_ANCHORS",
+  "version": "1.0.0",
+  "sealed_at": "2026-05-17",
+  "architect": "Psi-001 / Brandon Mark Hines",
+  "house": "House of Orange / ARCHON Psi Atelier",
+  "lifecycle_state": "ACTIVE",
+  "status": "OPEN",
+  "scope": "Registry of artifacts produced in sibling threads or other workspaces that are ANCHORED but NOT ABSORBED into this thread's lane system. Each entry preserves the artifact's provenance (sha256 + locator) so cross-thread references resolve, but the artifact body is not imported here. Distinct from Antechamber (which is for items pending lane assignment within this thread).",
+  "rules": {
+    "inclusion_criteria": [
+      "Artifact has a verifiable anchor (sha256, artifact ID, or commit ref)",
+      "Artifact is referenced from at least one document in this repo (citation, comparison, fork note)",
+      "Architect has explicitly ratified anchor logging (MARK_EXTERNAL disposition)"
+    ],
+    "exclusion_rules": [
+      "Anchored entries are NOT canon — they cannot be substrate for HPBI Level-3 claims",
+      "Anchored entries do NOT appear in Lane manifests as assets",
+      "Promotion to a Lane requires explicit architect ratification (SEAL_HERE disposition) plus body import"
+    ]
+  },
+  "entry_count": 1,
+  "entries": [
+    {
+      "entry_id": "XWA-CAPSULE-09-0001",
+      "name": "Capsule 09 - ARCHON Operational Telemetry",
+      "origin_workspace": "sibling-thread (Canon Architect / capsule-chain)",
+      "artifact_id": "cmp92t4gy00m907adritxzx6v",
+      "placeholder": "[[ARTIFACT_ritxzx6v@v1]]",
+      "sha256": "a50e2c8f8c120a4ef2340c98b7c3b85bee5f58244c184e3271dcc863d9b30e19",
+      "prev_hash_label": "CAPSULE_08_LEGIBILITY_WRIT",
+      "status": "EXTERNAL_NOT_CANON",
+      "lifecycle_in_source": "PUBLISHED · awaiting architect seal",
+      "ratified_at": "2026-05-17 (Day III.f)",
+      "ratification_vote": "VOTE Capsule-09=PUBLISHED (anchor) -> MARK_EXTERNAL (logged here per Day III.g sibling hygiene)",
+      "relation_to_this_repo": "Anchored only. Not imported. Body lives in source workspace. Cross-reference preserved via artifact_id + sha256.",
+      "promotion_path": "If later ratified SEAL_HERE, body would be imported under a target lane (likely Lane T TECH_UI given 'operational telemetry' subject). Until then, EXTERNAL.",
+      "url": null,
+      "url_note": "URL/locator not provided at ratification time. Architect may supply later; placeholder remains valid."
+    }
+  ],
+  "phantom_voids": [
+    {
+      "void_id": "PV-0001",
+      "voided_placeholder": "[[ARTIFACT_gzl9iq9u@v1]]",
+      "voided_at": "2026-05-17 (Day III.f vote)",
+      "reason": "Phantom reference appearing in sibling-thread paste. Ratified VOID; struck from all canon records. Any future appearance should be ignored.",
+      "replaces_with": "XWA-CAPSULE-09-0001 (the legitimate Capsule 09 anchor)"
+    }
+  ],
+  "provenance": {
+    "prev_hash": null,
+    "hash_algo": "sha256",
+    "this_hash": "40109d26a709956f7ca5df48a599c0f2fff6119e40f0d23368a7f7ce64057d3e"
+  }
+}

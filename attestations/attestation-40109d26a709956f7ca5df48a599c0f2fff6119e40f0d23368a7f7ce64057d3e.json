@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "manifest_path": "manifests/cross-workspace-anchors-v1.0.0.json",
+  "repository": null,
+  "ref": null,
+  "commit": null,
+  "computed_digest": "40109d26a709956f7ca5df48a599c0f2fff6119e40f0d23368a7f7ce64057d3e",
+  "asserted_digest": "40109d26a709956f7ca5df48a599c0f2fff6119e40f0d23368a7f7ce64057d3e",
+  "pass": true,
+  "timestamp_utc": "2026-05-17T13:20:39.152Z",
+  "canonicalization": "sort_keys_deep + JSON.stringify(compact); provenance.this_hash=null; remove provenance.this_hash_asserted",
+  "receipt_line": "RCPT-AUTO | UNSPECIFIED | cross-workspace-anchors-v1.0.0 | ASSERTED→ATTESTED | evidence sha256:40109d26a709956f7ca5df48a599c0f2fff6119e40f0d23368a7f7ce64057d3e | commit null | manifest manifests/cross-workspace-anchors-v1.0.0.json | digest 40109d26a709956f7ca5df48a599c0f2fff6119e40f0d23368a7f7ce64057d3e"
+}

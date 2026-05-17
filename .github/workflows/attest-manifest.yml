@@ -66,9 +66,9 @@ jobs:
           for M in $MANIFESTS; do
             echo "── Attesting: $M ──"
             if [ -n "$RECEIPT" ]; then
-              node scripts/compute_attestation.js "$M" "$RECEIPT"
+              node canon-infra/scripts/compute_attestation.js "$M" "$RECEIPT"
             else
-              node scripts/compute_attestation.js "$M"
+              node canon-infra/scripts/compute_attestation.js "$M"
             fi
           done
 
