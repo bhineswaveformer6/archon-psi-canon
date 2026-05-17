@@ -1,0 +1,90 @@
+{
+  "$id": "urn:cortexchain:canon-ledger:lane-b:manifest:v1.1",
+  "schema_version": "1.0",
+  "lane": "B",
+  "name": "BRAND_IDENTITY",
+  "version": "1.1.0",
+  "sealed_at": "2026-05-16",
+  "architect": "Psi-001 / Brandon Mark Hines",
+  "house": "House of Orange / ARCHON Psi Atelier",
+  "lifecycle_state": "PROBATION",
+  "status": "OPEN",
+  "scope": "Brand-identity assets: marks (logos/icons), portraits, and a curated aesthetic library (reference art that informs voice/tone but is not the subject's own production).",
+  "notes": "v1.1.0 minor bump: adds 'aesthetic-library' sub-class containing the Hunt Slonem rabbit reference. v1.0.0 assets preserved and re-listed.",
+  "prev_version": "1.0.0",
+  "prev_version_hash": "e2e4fa089cc236cac1c768794e8f34e84b663a07ca9c1674655fb39292a3bb3f",
+  "asset_count": 4,
+  "assets": [
+    {
+      "asset_id": "B-MARK-COMPASS-0001",
+      "type": "image/jpeg",
+      "filename": "IMG_1032.jpeg",
+      "sha256": "fac7642c16efb99477f00eb0862977e765af91731158f58e1e11fccb211996d2",
+      "byte_size": 328718,
+      "description": "Geometric compass/divider line-icon. Two-tone gradient orange/amber outline of a compass inscribed in a circle, transparent background, square aspect.",
+      "classification_confidence": "MEDIUM",
+      "sub_class": "mark",
+      "tags": [
+        "icon",
+        "compass",
+        "geometric",
+        "transparent-bg"
+      ]
+    },
+    {
+      "asset_id": "B-MARK-CROWN-0002",
+      "type": "image/png",
+      "filename": "IMG_1026.png",
+      "sha256": "9817f2262895a8989a311199c7535839db5c87602132e1162f35bd3da7181e4c",
+      "byte_size": 733826,
+      "description": "Heraldic mark: orange/amber crown atop crossed angular elements (feathers or stylized swords), centered on midnight-navy field. Square aspect.",
+      "classification_confidence": "MEDIUM",
+      "sub_class": "mark",
+      "tags": [
+        "heraldic",
+        "crown",
+        "dark-mode",
+        "logo-candidate"
+      ]
+    },
+    {
+      "asset_id": "B-PORTRAIT-0003",
+      "type": "image/jpeg",
+      "filename": "1750929205240.jpg",
+      "sha256": "850a37c3e68b090fba803bf34ae842fcc2ed5dbfcaad758c6c65cfc45f95e1de",
+      "byte_size": 73190,
+      "description": "Personal portrait. Subject in fitted patterned hat, oversized dark glasses, gold dental work, plaid collar visible. Hexagonal frame on black background, violet/blue duotone treatment.",
+      "classification_confidence": "MEDIUM",
+      "sub_class": "portrait",
+      "tags": [
+        "portrait",
+        "hexagonal-frame",
+        "duotone"
+      ]
+    },
+    {
+      "asset_id": "B-AESTHETIC-RABBIT-SLONEM-0004",
+      "type": "image/jpeg",
+      "filename": "520883614_1353681316758888_927813574743265419_n.jpg",
+      "sha256": "196d1c249835087fb707b6eb5e2307ed24397447a5a728e1152ea6160586ad3b",
+      "byte_size": 1535736,
+      "description": "Hunt Slonem green rabbit painting in ornate gilt frame. Single black rabbit silhouette over a saturated emerald-green ground, gestural brushwork. Blue-chip contemporary aesthetic reference.",
+      "classification_confidence": "HIGH",
+      "sub_class": "aesthetic-library",
+      "attribution": "Hunt Slonem (artist, reference only — not owned)",
+      "tags": [
+        "aesthetic-reference",
+        "painting",
+        "rabbit",
+        "gilt-frame",
+        "emerald",
+        "blue-chip-art"
+      ]
+    }
+  ],
+  "provenance": {
+    "prev_hash": "e2e4fa089cc236cac1c768794e8f34e84b663a07ca9c1674655fb39292a3bb3f",
+    "hash_algo": "sha256",
+    "this_hash": "a0db42d05c6f03f3ea1e3cc2f5b6d8f98780cf9e08443f675be6dd60c58b4475"
+  }
+}

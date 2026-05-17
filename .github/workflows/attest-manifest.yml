@@ -1,0 +1,82 @@
+name: Attest Manifest (artifact-only · strict)
+
+# ─────────────────────────────────────────────────────────────
+#  Lane-Neutral Attestation Workflow · v1.0
+#  Ratified 2026-05-16 (Day II Post-Sigillvm)
+#  Artifact-only · strict-exit · upload-if-always
+#  No auto-commit until two clean green runs are logged.
+# ─────────────────────────────────────────────────────────────
+
+on:
+  push:
+    branches: [ "main", "master" ]
+    paths:
+      - 'manifests/**'
+      - 'receipts/**'
+  workflow_dispatch:
+    inputs:
+      manifest_path:
+        description: 'Path to manifest JSON to attest (e.g. manifests/a-money-v1.0.0.json)'
+        required: true
+        default: ''
+      receipt_path:
+        description: 'Optional path to receipt JSON (e.g. receipts/RCPT-PROB-SEAL-0001.json)'
+        required: false
+        default: ''
+
+jobs:
+  attest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Determine manifests to attest
+        id: detect
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "manifests=${{ github.event.inputs.manifest_path }}" >> $GITHUB_OUTPUT
+            echo "receipt=${{ github.event.inputs.receipt_path }}" >> $GITHUB_OUTPUT
+          else
+            CHANGED=$(git diff --name-only HEAD~1 HEAD -- 'manifests/**' | grep '\.json$' | tr '\n' ' ' || true)
+            echo "manifests=$CHANGED" >> $GITHUB_OUTPUT
+            echo "receipt=" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Run attestation
+        env:
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_SHA: ${{ github.sha }}
+          GITHUB_REF: ${{ github.ref }}
+        run: |
+          set -e
+          MANIFESTS="${{ steps.detect.outputs.manifests }}"
+          RECEIPT="${{ steps.detect.outputs.receipt }}"
+          if [ -z "$MANIFESTS" ]; then
+            echo "No manifests detected for attestation. Exiting cleanly."
+            exit 0
+          fi
+          for M in $MANIFESTS; do
+            echo "── Attesting: $M ──"
+            if [ -n "$RECEIPT" ]; then
+              node scripts/compute_attestation.js "$M" "$RECEIPT"
+            else
+              node scripts/compute_attestation.js "$M"
+            fi
+          done
+
+      - name: Upload attestation artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: manifest-attestation-${{ github.sha }}
+          path: attestation-*.json
+          if-no-files-found: warn
+          retention-days: 90

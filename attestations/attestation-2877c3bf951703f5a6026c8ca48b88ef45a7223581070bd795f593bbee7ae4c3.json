@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "manifest_path": "manifests/lane-s-sceptre-royal-v0.1.0.json",
+  "repository": null,
+  "ref": null,
+  "commit": null,
+  "computed_digest": "2877c3bf951703f5a6026c8ca48b88ef45a7223581070bd795f593bbee7ae4c3",
+  "asserted_digest": "2877c3bf951703f5a6026c8ca48b88ef45a7223581070bd795f593bbee7ae4c3",
+  "pass": true,
+  "timestamp_utc": "2026-05-17T12:33:04.933Z",
+  "canonicalization": "sort_keys_deep + JSON.stringify(compact); provenance.this_hash=null; remove provenance.this_hash_asserted",
+  "receipt_line": "RCPT-AUTO | UNSPECIFIED | lane-s-sceptre-royal-v0.1.0 | ASSERTED→ATTESTED | evidence sha256:2877c3bf951703f5a6026c8ca48b88ef45a7223581070bd795f593bbee7ae4c3 | commit null | manifest manifests/lane-s-sceptre-royal-v0.1.0.json | digest 2877c3bf951703f5a6026c8ca48b88ef45a7223581070bd795f593bbee7ae4c3"
+}

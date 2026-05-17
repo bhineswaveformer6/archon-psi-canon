@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "manifest_path": "manifests/lane-n-neuro-evidence-v1.0.0.json",
+  "repository": null,
+  "ref": null,
+  "commit": null,
+  "computed_digest": "f417d28b0db1bba4c0a4a49280d5f6004a372011fdb9850bf9b0b6f16f65d17c",
+  "asserted_digest": "f417d28b0db1bba4c0a4a49280d5f6004a372011fdb9850bf9b0b6f16f65d17c",
+  "pass": true,
+  "timestamp_utc": "2026-05-16T22:28:36.200Z",
+  "canonicalization": "sort_keys_deep + JSON.stringify(compact); provenance.this_hash=null; remove provenance.this_hash_asserted",
+  "receipt_line": "RCPT-AUTO | UNSPECIFIED | lane-n-neuro-evidence-v1.0.0 | ASSERTED→ATTESTED | evidence sha256:f417d28b0db1bba4c0a4a49280d5f6004a372011fdb9850bf9b0b6f16f65d17c | commit null | manifest manifests/lane-n-neuro-evidence-v1.0.0.json | digest f417d28b0db1bba4c0a4a49280d5f6004a372011fdb9850bf9b0b6f16f65d17c"
+}

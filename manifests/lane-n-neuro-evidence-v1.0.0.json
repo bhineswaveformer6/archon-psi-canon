@@ -1,0 +1,38 @@
+{
+  "$id": "urn:cortexchain:canon-ledger:lane-n:manifest:v1",
+  "schema_version": "1.0",
+  "lane": "N",
+  "name": "NEURO_EVIDENCE",
+  "version": "1.0.0",
+  "sealed_at": "2026-05-16",
+  "architect": "Psi-001 / Brandon Mark Hines",
+  "house": "House of Orange / ARCHON Psi Atelier",
+  "lifecycle_state": "PROBATION",
+  "status": "OPEN",
+  "notes": "Probation status: single asset at v1. Expected functional-connectivity heatmap (inline image in source thread) was not separately uploaded as a fetchable file; awaits architect direction for inclusion.",
+  "asset_count": 1,
+  "assets": [
+    {
+      "asset_id": "N-BCI-WORKFLOW-0001",
+      "type": "image/jpeg",
+      "filename": "IMG_1039.jpeg",
+      "sha256": "fdd7c1b9ddf75b549ed8fc2b1d5e35741c8b0116ac27161fa1f5427b98ef7f77",
+      "byte_size": 157260,
+      "description": "Brain-computer interface workflow diagram. Pipeline: Dorsiflex Ankle + Visual Feedback -> EEG Activity (MRCP) -> Training Detection Model -> Realtime Detection -> NMES Feedback. Visual elements: deep-learning model schematic, MATLAB scalp topography display (two heatmaps), EEG cap on supine subject, Unity visual feedback panel (Joint Angle indicator), IMU sensors on leg. Watermark: Life Performance Research.",
+      "classification_confidence": "HIGH",
+      "tags": [
+        "EEG",
+        "BCI",
+        "MRCP",
+        "NMES",
+        "deep-learning",
+        "motor-intent-detection"
+      ]
+    }
+  ],
+  "provenance": {
+    "prev_hash": null,
+    "hash_algo": "sha256",
+    "this_hash": "f417d28b0db1bba4c0a4a49280d5f6004a372011fdb9850bf9b0b6f16f65d17c"
+  }
+}

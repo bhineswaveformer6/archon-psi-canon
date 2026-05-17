@@ -1,0 +1,171 @@
+{
+  "$id": "urn:cortexchain:canon-ledger:lane-nc:manifest:v0.1",
+  "schema_version": "1.0",
+  "lane": "NC",
+  "name": "NEURAL_CAPITAL",
+  "full_name": "NEURAL_CAPITAL / HPBI (Human Performance Brain Index)",
+  "version": "0.1.0",
+  "sealed_at": "2026-05-16",
+  "architect": "Psi-001 / Brandon Mark Hines",
+  "house": "House of Orange / ARCHON Psi Atelier",
+  "lifecycle_state": "DRAFT",
+  "status": "OPEN",
+  "charter_ref": "charters/lane-nc-charter-v0.1.md",
+  "scope": "HPBI / Neural Capital Lens / brain-capital measurement economics for employees and high-performance professionals.",
+  "outputs_in_scope": [
+    "whitepaper canon",
+    "metric definitions",
+    "claim taxonomy",
+    "market framing",
+    "audit rules"
+  ],
+  "exclusions": [
+    "raw neuro figures and biosignal evidence (Lane N)",
+    "brand marks/portraits and aesthetic library (Lane B)",
+    "voice/lexicon/mythic-doctrine substrate (Lane V)",
+    "legal pack (Lane R, not yet opened)",
+    "product/UI code (Lane A)"
+  ],
+  "notes": "v0.1 is an INGESTION manifest only — assets logged with titles + hashes + provenance. No synthesis yet. Charter governs what synthesis is canonical when assets are later promoted from DRAFT to PROBATION.",
+  "asset_count": 16,
+  "assets": [
+    {
+      "asset_id": "NC-DOC-0001",
+      "type": "application/pdf",
+      "filename": "immortal_candidate_marketplace.pdf",
+      "title": "Immortal Candidate Marketplace",
+      "sha256": "4240e547646ed406165eff8433bb47d76b39b9cd37e908d5bd3da1f7d13c4982",
+      "byte_size": 163466
+    },
+    {
+      "asset_id": "NC-DOC-0002",
+      "type": "application/pdf",
+      "filename": "The Era of the Cost Center Employee is Over (truncated).pdf",
+      "title": "The Era of the 'Cost Center' Employee is Over",
+      "sha256": "6ae001cc0c6a57131f490cda4afc951a7459a5f5811cd976fbe32247e802dd84",
+      "byte_size": 512794
+    },
+    {
+      "asset_id": "NC-DOC-0003",
+      "type": "application/pdf",
+      "filename": "How to measure brain capital in employees.pdf",
+      "title": "How to Measure Brain Capital in Employees",
+      "sha256": "9cc3b6930cdbd284227070dd9e0c0d332b93c4aae3f2b1f83b1583c015ccab31",
+      "byte_size": 446020
+    },
+    {
+      "asset_id": "NC-DOC-0004",
+      "type": "application/pdf",
+      "filename": "Masterpiece promo for perplexity cpu to deliver th.pdf",
+      "title": "Masterpiece Promo for Perplexity CPU (Delivery)",
+      "sha256": "eb0da5341bc21503e130327fc245097f9a98000b8721d5f6182319deac5b8c6d",
+      "byte_size": 338247
+    },
+    {
+      "asset_id": "NC-DOC-0005",
+      "type": "application/pdf",
+      "filename": "Masterpiece prompt for perplexity CPU to deliver p.pdf",
+      "title": "Masterpiece Prompt for Perplexity CPU (Production)",
+      "sha256": "3dce7d27c3046976d83306d3002ced27b3ece9b8a5ed753a2bf9cf3bd742d442",
+      "byte_size": 340837
+    },
+    {
+      "asset_id": "NC-DOC-0006",
+      "type": "application/pdf",
+      "filename": "Full corpus absorbed. 10 PDFs synthesized. Here_s.pdf",
+      "title": "Full Corpus Absorbed — 10 PDFs Synthesized",
+      "sha256": "4706b9e309a9009a51a4fb57b7ba3264e66ef26ca88fb08a5762e9bae5f8439f",
+      "byte_size": 482228
+    },
+    {
+      "asset_id": "NC-DOC-0007",
+      "type": "application/pdf",
+      "filename": "Compare Codex and MASTER GLOSSARY features for eng.pdf",
+      "title": "Compare Codex and MASTER GLOSSARY Features (Engineering)",
+      "sha256": "edf1bb77a8ed2f154ff9d05f93c853738f843c0c1ebd1bbd31d60c2b94ef55fe",
+      "byte_size": 445455
+    },
+    {
+      "asset_id": "NC-PKG-0008",
+      "type": "application/zip",
+      "filename": "Reality Lens — Agentic Factorizer 2.zip",
+      "title": "Reality Lens — Agentic Factorizer 2 (Vite app build)",
+      "sha256": "a361cf529e4ef9764d4b01522b3a462520d34022882ca9f721ab53f20eb342b4",
+      "byte_size": 113045,
+      "contents": [
+        "index.html (5,427 B)",
+        "assets/index-DfeTMUZ9.css (75,771 B)",
+        "assets/index-Sd35dv-z.js (308,988 B)"
+      ]
+    },
+    {
+      "asset_id": "NC-DOC-0009",
+      "type": "application/pdf",
+      "filename": "Rank grade audit this page Harness Engineering OS.pdf",
+      "title": "Rank-Grade Audit — Harness Engineering OS",
+      "sha256": "785ea5cdb85f8512ca1f490689c82bb0ebf48c1d693b5d555ce4bd33eceab00b",
+      "byte_size": 507195
+    },
+    {
+      "asset_id": "NC-WEB-0010",
+      "type": "text/html",
+      "filename": "neural-capital-lens-substack.html",
+      "title": "Neural Capital Lens (Substack export)",
+      "sha256": "395706de9dcc919851ad56cb13b039c2f0f6a2bccdc3b4ac7632ba092254f5fc",
+      "byte_size": 18383
+    },
+    {
+      "asset_id": "NC-DOC-0011",
+      "type": "application/pdf",
+      "filename": "neural_capital_lens_hpbi.pdf",
+      "title": "Neural Capital Lens — HPBI (base)",
+      "sha256": "4b8b6bd4c25829173e5b57d06845bbf4cc41ce0ee3c0e55de89dc2da2724b644",
+      "byte_size": 458076
+    },
+    {
+      "asset_id": "NC-DOC-0012",
+      "type": "application/pdf",
+      "filename": "Neural Capital Lens_ HPBI Whitepaper for LinkedIn.pdf",
+      "title": "Neural Capital Lens — HPBI Whitepaper for LinkedIn",
+      "sha256": "ea45decfc564b98ad4050cb2fab650aeb7f0e088761701b805f29bb97958a79a",
+      "byte_size": 467298
+    },
+    {
+      "asset_id": "NC-DOC-0013",
+      "type": "application/pdf",
+      "filename": "Compare Neural Capital to traditional VC models in.pdf",
+      "title": "Compare Neural Capital to Traditional VC Models",
+      "sha256": "fd90014bce2bfd31433ecfb0141eb0b9ed8da570cd86b97f7cca955abf7bbefa",
+      "byte_size": 471902
+    },
+    {
+      "asset_id": "NC-DOC-0014",
+      "type": "application/pdf",
+      "filename": "Create the proof of measurement and use Ryan_s art.pdf",
+      "title": "Create the Proof of Measurement (Ryan's Art)",
+      "sha256": "d9fabfaf0b7c7d5515c590003cc8438007cf4e3efa86f1ce90d03fc2691c0fdd",
+      "byte_size": 512204
+    },
+    {
+      "asset_id": "NC-DOC-0015",
+      "type": "application/pdf",
+      "filename": "Neural Capital Lens_ HPBI as a Measurement Stack f.pdf",
+      "title": "Neural Capital Lens — HPBI as a Measurement Stack",
+      "sha256": "451051829881c44ee4b87062198eed65d6c0936fcc397ba762a2257ada02c125",
+      "byte_size": 484709
+    },
+    {
+      "asset_id": "NC-DOC-0016",
+      "type": "application/pdf",
+      "filename": "Conversation.pdf",
+      "title": "Conversation (working dialogue capture)",
+      "sha256": "871297a8525be7a5c3e19c4b27617f3be4405e1eede18a8712e11f2164149afd",
+      "byte_size": 358716
+    }
+  ],
+  "provenance": {
+    "prev_hash": null,
+    "hash_algo": "sha256",
+    "this_hash": "82d56b34d5a525051f1dd2684c797ad38395cca0208ffbdfba773adb8d0c7f33"
+  }
+}

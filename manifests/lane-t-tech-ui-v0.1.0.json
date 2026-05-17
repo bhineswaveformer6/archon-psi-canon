@@ -1,0 +1,49 @@
+{
+  "$id": "urn:cortexchain:canon-ledger:lane-t:manifest:v0.1",
+  "schema_version": "1.0",
+  "lane": "T",
+  "name": "TECH_UI",
+  "version": "0.1.0",
+  "sealed_at": "2026-05-16",
+  "architect": "Psi-001 / Brandon Mark Hines",
+  "house": "House of Orange / ARCHON Psi Atelier",
+  "lifecycle_state": "DRAFT",
+  "status": "OPEN",
+  "scope": "Tech / UI / interface-taxonomy substrate: HUD elements, biometric panels, dashboard kits, interface design language references, motion-and-frame primitives for tech products. Distinct from Lane N (raw biosignal evidence) and Lane B (brand identity).",
+  "exclusions": [
+    "raw neuro / biosignal evidence (Lane N)",
+    "brand marks / portraits / brand video (Lane B)",
+    "voice / lexicon / mythic-doctrine substrate (Lane V)",
+    "thesis and whitepaper canon (Lane NC)",
+    "product source code (Lane A)"
+  ],
+  "notes": "Lane T opened Day III.c. Inaugural asset: HUD Medical biometric UI kit. Anchored as INTERFACE substrate, NOT evidence. Future ingestion expected: dashboard mockups, UI motion studies, biometric panel references.",
+  "asset_count": 1,
+  "assets": [
+    {
+      "asset_id": "T-HUD-MEDICAL-0001",
+      "type": "image/jpeg",
+      "filename": "243387688.jpg",
+      "sha256": "198d4ec726645ff70d1d5c5f46a96c06dedeff661892845e1dfe4409a9459f66",
+      "byte_size": 53822,
+      "description": "HUD ELEMENTS PACK MEDICAL CENTER — full biometric/medical UI kit graphic. Contains: body scan with overlay anatomy, DNA helix, vital signs panels, fingerprint scanning, heart-rate visualization, gauges, percentage rings, dashboard widgets. Suitable as interface-taxonomy reference for tech surfaces that depict bio/medical measurement.",
+      "classification_confidence": "HIGH",
+      "sub_class": "ui-kit",
+      "tags": [
+        "HUD",
+        "biometric",
+        "medical",
+        "UI-kit",
+        "dashboard",
+        "DNA",
+        "vital-signs",
+        "interface-taxonomy"
+      ]
+    }
+  ],
+  "provenance": {
+    "prev_hash": null,
+    "hash_algo": "sha256",
+    "this_hash": "8d09c2129ee0426ae23479c912e0bdeff2d58d16f7fc349520c362efe540931e"
+  }
+}

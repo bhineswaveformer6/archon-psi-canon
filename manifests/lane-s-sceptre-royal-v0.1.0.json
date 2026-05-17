@@ -1,0 +1,126 @@
+{
+  "$id": "urn:cortexchain:canon-ledger:lane-s:manifest:v0.1",
+  "schema_version": "1.0",
+  "lane": "S",
+  "name": "SCEPTRE_ROYAL",
+  "version": "0.1.0",
+  "sealed_at": "2026-05-16",
+  "architect": "Psi-001 / Brandon Mark Hines",
+  "house": "House of Orange / ARCHON Psi Atelier",
+  "lifecycle_state": "DRAFT",
+  "status": "OPEN",
+  "absorption_decision": "S = STANDALONE per VOTE Day III.f. NOT merged into Lane K (Kingmakers). Lane S maintains its own version history and prev_hash chain.",
+  "scope": "Sceptre Royal v1.0.0 architecture: 10-panel canonical progression (INITIVM through AETERNITAS), Cross-Room Mechanic (R-01 through R-10), CLAVSUS orthography standard, and (when relevant) the RitualBCIOS MPLA Pack reference.",
+  "orthography_canon": {
+    "standard": "CLAVSUS",
+    "rule": "Latin V/U disambiguation: write CLAVSUS, not CLAVSVS. Apply consistently across manifest, UI, tests, and receipts within Lane S.",
+    "integrity_motto": "CLAVSUS NON EST OBSCVRVS"
+  },
+  "ten_panel_topology": [
+    {
+      "ordinal": "I",
+      "name": "INITIVM",
+      "function": "Entry / initialization"
+    },
+    {
+      "ordinal": "II",
+      "name": "PROVENIENTIA",
+      "function": "Lineage / origin verification"
+    },
+    {
+      "ordinal": "III",
+      "name": "IMPERIVM",
+      "function": "Authority layer",
+      "anchors": [
+        "III.V (Cullinan)",
+        "III.VII (Capetian Main)"
+      ]
+    },
+    {
+      "ordinal": "IV",
+      "name": "MENSVRA",
+      "function": "ARCHON Psi measurement",
+      "critical": false
+    },
+    {
+      "ordinal": "V",
+      "name": "TESTIMONIVM",
+      "function": "Evidence / attestation"
+    },
+    {
+      "ordinal": "VI",
+      "name": "SIGILLVM",
+      "function": "Sealing ritual",
+      "critical": true
+    },
+    {
+      "ordinal": "VII",
+      "name": "HIERARCHIA",
+      "function": "Castle layers / structural hierarchy",
+      "critical": true
+    },
+    {
+      "ordinal": "VIII",
+      "name": "ARTEFACTVM",
+      "function": "Artifacts",
+      "anchors": [
+        "VIII.VI (Aachen Marble)",
+        "VIII.IX (Polykleitan Attribution)"
+      ]
+    },
+    {
+      "ordinal": "IX",
+      "name": "ARCANVM",
+      "function": "Vault mechanics",
+      "anchors": [
+        "IX.II (CLAVSUS lock-state authority, exclusive)"
+      ]
+    },
+    {
+      "ordinal": "X",
+      "name": "AETERNITAS",
+      "function": "Permanence seal"
+    }
+  ],
+  "ten_room_mechanic": {
+    "description": "Rooms R-01 through R-10 map to panels I-X. Anchor requirements: R-03 (Throne Room) -> Panel III (references III.V and III.VII); R-08 (Treasury) -> Panel VIII (references VIII.VI and VIII.IX); R-09 (The Vault) -> Panel IX (IX.II CLAVSUS, exclusive lock-state authority).",
+    "lock_state_authority": "EXCLUSIVE to R-09 / IX.II CLAVSUS. Other rooms attempting global lock-state mutation must FAIL under the test harness."
+  },
+  "asset_count": 1,
+  "assets": [
+    {
+      "asset_id": "S-SR-MANIFEST-0001",
+      "type": "application/json",
+      "title": "Sceptre Royal v1.0.0 Manifest (sibling-thread first-party)",
+      "source": "sibling-thread artifact; introduced into this thread via cross-thread paste and ratified for standalone Lane S absorption on Day III.f",
+      "sibling_asserted_sha256": "04a526c640f951e9d2a6dd394a7707c83d1a06e1c9697030947a1663b42a7a54",
+      "verification_state": "ASSERTED_PENDING_INDEPENDENT_VERIFICATION",
+      "verification_note": "Independent recomputation requires the source JSON content, which is NOT present in this workspace. Canon-infra cannot verify the asserted hash without the source. The Lane S manifest itself (this file) is fully canon-infra-attested; only the inaugural asset's hash carries the ASSERTED-not-ATTESTED flag.",
+      "verification_unblock": "To move asset from ASSERTED -> ATTESTED, either: (a) upload the actual Sceptre Royal v1.0.0 JSON to this workspace and run canon-infra/scripts/compute_attestation.js against it; or (b) attest via the sibling thread that owns the source and import the attestation receipt by sha256.",
+      "ten_panel_anchors": [
+        "III.V",
+        "III.VII",
+        "VIII.VI",
+        "VIII.IX",
+        "IX.II CLAVSUS"
+      ],
+      "classification_confidence": "MEDIUM (high on architecture, low-without-source on hash claim)",
+      "sub_class": "architecture-manifest"
+    }
+  ],
+  "related_packs": {
+    "ritualbcios_mpla": {
+      "status": "OUT_OF_SCOPE_FOR_LANE_S_v0.1",
+      "note": "MPLA Pack (Schedule B Enterprise Performance, Exhibit X Claim Management Framework, Figure Board HTML) referenced by sibling-thread but not absorbed here. May open Lane R (LEGAL_PACK) separately on future ratification. Not part of Lane S architecture."
+    }
+  },
+  "jewel_core_application": {
+    "note": "Per ratified Jewel-Core PRIMITIVE (canon-infra-v1/schemas/jewel-core-schema-v1.0.md, sha256 dd957d3c1d4d5d002e966d0c617b51cb988121708c915b89081cdc9ef2569a79), Lane S inherits the substrate. S-pillar reading: Sceptre Royal's 10-panel topology encodes SOVEREIGNTY (IMPERIVM, HIERARCHIA, AETERNITAS). M-pillar reading: PROVENIENTIA, MENSVRA, TESTIMONIVM, SIGILLVM, ARCANVM/CLAVSUS encode MENSURA. Architecture itself maps naturally to S/M dual structure."
+  },
+  "notes": "Lane S opened Day III.f under VOTE SR=S. Lifecycle DRAFT until inaugural asset (S-SR-MANIFEST-0001) is independently verified. On verification, lane advances to PROBATION. CLAVSUS orthography ratified as Lane S internal standard.",
+  "provenance": {
+    "prev_hash": null,
+    "hash_algo": "sha256",
+    "this_hash": "2877c3bf951703f5a6026c8ca48b88ef45a7223581070bd795f593bbee7ae4c3"
+  }
+}

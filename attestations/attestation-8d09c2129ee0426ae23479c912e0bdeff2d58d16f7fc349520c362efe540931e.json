@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "manifest_path": "manifests/lane-t-tech-ui-v0.1.0.json",
+  "repository": null,
+  "ref": null,
+  "commit": null,
+  "computed_digest": "8d09c2129ee0426ae23479c912e0bdeff2d58d16f7fc349520c362efe540931e",
+  "asserted_digest": "8d09c2129ee0426ae23479c912e0bdeff2d58d16f7fc349520c362efe540931e",
+  "pass": true,
+  "timestamp_utc": "2026-05-16T23:57:42.718Z",
+  "canonicalization": "sort_keys_deep + JSON.stringify(compact); provenance.this_hash=null; remove provenance.this_hash_asserted",
+  "receipt_line": "RCPT-AUTO | UNSPECIFIED | lane-t-tech-ui-v0.1.0 | ASSERTED→ATTESTED | evidence sha256:8d09c2129ee0426ae23479c912e0bdeff2d58d16f7fc349520c362efe540931e | commit null | manifest manifests/lane-t-tech-ui-v0.1.0.json | digest 8d09c2129ee0426ae23479c912e0bdeff2d58d16f7fc349520c362efe540931e"
+}

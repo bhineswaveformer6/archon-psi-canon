@@ -1,0 +1,47 @@
+{
+  "$id": "urn:cortexchain:canon-ledger:lane-v:manifest:v1",
+  "schema_version": "1.0",
+  "lane": "V",
+  "name": "VOICE_LEXICON",
+  "version": "1.0.0",
+  "sealed_at": "2026-05-16",
+  "architect": "Psi-001 / Brandon Mark Hines",
+  "house": "House of Orange / ARCHON Psi Atelier",
+  "lifecycle_state": "PROBATION",
+  "status": "OPEN",
+  "scope": "Voice register substrate: doctrinal copy, mythic frames, lexicon source material, tone references, archetypal infographics.",
+  "exclusions": [
+    "raw neuro evidence (Lane N)",
+    "brand marks/portraits (Lane B)",
+    "thesis and whitepaper canon (Lane NC)",
+    "product code or UI (Lane A)"
+  ],
+  "notes": "Lane opened Day III.b to receive substrate that is primarily copy/tone/mythic doctrine. v1.0.0 ingests SERPENT WISDOM as inaugural asset.",
+  "asset_count": 1,
+  "assets": [
+    {
+      "asset_id": "V-LEX-SERPENT-WISDOM-0001",
+      "type": "image/jpeg",
+      "filename": "558104930_685042904638377_6458402920212685663_n.jpg",
+      "sha256": "82e5f7fb1ad3b86d379a0ad51472c95ab8485534909d2f4bfdf7437703183979",
+      "byte_size": 97504,
+      "description": "SERPENT WISDOM infographic. Central composition: golden Tutankhamun funerary mask with rearing cobra (uraeus). Title and body copy frame mythic self-mastery doctrine drawing on Egyptian iconography. Square aspect, designed for social-card distribution.",
+      "classification_confidence": "HIGH",
+      "sub_class": "mythic-infographic",
+      "tags": [
+        "Egyptian",
+        "Tutankhamun",
+        "uraeus",
+        "cobra",
+        "self-mastery",
+        "mythic-doctrine",
+        "social-card"
+      ]
+    }
+  ],
+  "provenance": {
+    "prev_hash": null,
+    "hash_algo": "sha256",
+    "this_hash": "ea32db67a12e69edcb96a207393ed613180280d35b30e4203a6447b431d4f518"
+  }
+}

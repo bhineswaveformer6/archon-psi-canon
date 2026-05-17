@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "manifest_path": "manifests/lane-b-brand-identity-v1.1.0.json",
+  "repository": null,
+  "ref": null,
+  "commit": null,
+  "computed_digest": "a0db42d05c6f03f3ea1e3cc2f5b6d8f98780cf9e08443f675be6dd60c58b4475",
+  "asserted_digest": "a0db42d05c6f03f3ea1e3cc2f5b6d8f98780cf9e08443f675be6dd60c58b4475",
+  "pass": true,
+  "timestamp_utc": "2026-05-16T23:26:36.335Z",
+  "canonicalization": "sort_keys_deep + JSON.stringify(compact); provenance.this_hash=null; remove provenance.this_hash_asserted",
+  "receipt_line": "RCPT-AUTO | UNSPECIFIED | lane-b-brand-identity-v1.1.0 | ASSERTED→ATTESTED | evidence sha256:a0db42d05c6f03f3ea1e3cc2f5b6d8f98780cf9e08443f675be6dd60c58b4475 | commit null | manifest manifests/lane-b-brand-identity-v1.1.0.json | digest a0db42d05c6f03f3ea1e3cc2f5b6d8f98780cf9e08443f675be6dd60c58b4475"
+}

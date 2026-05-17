@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "manifest_path": "kingmakers-codex-manifest-v1.json",
+  "repository": null,
+  "ref": null,
+  "commit": null,
+  "computed_digest": "35781895e6e414dc809158b8817674411671a5ab4ee71342111be48d74d82e05",
+  "asserted_digest": "35781895e6e414dc809158b8817674411671a5ab4ee71342111be48d74d82e05",
+  "pass": true,
+  "timestamp_utc": "2026-05-16T22:12:13.152Z",
+  "canonicalization": "sort_keys_deep + JSON.stringify(compact); provenance.this_hash=null; remove provenance.this_hash_asserted",
+  "receipt_line": "RCPT-AUTO | UNSPECIFIED | kingmakers-codex-manifest-v1 | ASSERTED→ATTESTED | evidence sha256:35781895e6e414dc809158b8817674411671a5ab4ee71342111be48d74d82e05 | commit null | manifest kingmakers-codex-manifest-v1.json | digest 35781895e6e414dc809158b8817674411671a5ab4ee71342111be48d74d82e05"
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "manifest_path": "manifests/lane-nc-neural-capital-v0.2.0.json",
+  "repository": null,
+  "ref": null,
+  "commit": null,
+  "computed_digest": "d6e6d1d35253549ced66a05f883245c4c076e49c924729a0a585ceb73c2a04a1",
+  "asserted_digest": "d6e6d1d35253549ced66a05f883245c4c076e49c924729a0a585ceb73c2a04a1",
+  "pass": true,
+  "timestamp_utc": "2026-05-16T23:57:42.771Z",
+  "canonicalization": "sort_keys_deep + JSON.stringify(compact); provenance.this_hash=null; remove provenance.this_hash_asserted",
+  "receipt_line": "RCPT-AUTO | UNSPECIFIED | lane-nc-neural-capital-v0.2.0 | ASSERTED→ATTESTED | evidence sha256:d6e6d1d35253549ced66a05f883245c4c076e49c924729a0a585ceb73c2a04a1 | commit null | manifest manifests/lane-nc-neural-capital-v0.2.0.json | digest d6e6d1d35253549ced66a05f883245c4c076e49c924729a0a585ceb73c2a04a1"
+}

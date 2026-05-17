@@ -1,0 +1,68 @@
+{
+  "$id": "urn:cortexchain:canon-ledger:lane-b:manifest:v1",
+  "schema_version": "1.0",
+  "lane": "B",
+  "name": "BRAND_IDENTITY",
+  "version": "1.0.0",
+  "sealed_at": "2026-05-16",
+  "architect": "Psi-001 / Brandon Mark Hines",
+  "house": "House of Orange / ARCHON Psi Atelier",
+  "lifecycle_state": "PROBATION",
+  "status": "OPEN",
+  "notes": "Probation status: three assets at v1 (two brand marks + one founder portrait). Inventory differs from architect's stated 'three portraits' — Lane-B-fetched files include 2 marks and 1 portrait. The two inline portraits visible in the source thread (man with dragon tattoo; man with glasses) did not carry separate file IDs and could not be fetched. Awaits architect ratification of mark-vs-portrait split.",
+  "asset_count": 3,
+  "assets": [
+    {
+      "asset_id": "B-MARK-COMPASS-0001",
+      "type": "image/jpeg",
+      "filename": "IMG_1032.jpeg",
+      "sha256": "fac7642c16efb99477f00eb0862977e765af91731158f58e1e11fccb211996d2",
+      "byte_size": 328718,
+      "description": "Geometric compass/divider line-icon. Two-tone gradient orange/amber outline of a compass inscribed in a circle, transparent background, square aspect.",
+      "classification_confidence": "MEDIUM",
+      "sub_class": "mark",
+      "tags": [
+        "icon",
+        "compass",
+        "geometric",
+        "transparent-bg"
+      ]
+    },
+    {
+      "asset_id": "B-MARK-CROWN-0002",
+      "type": "image/png",
+      "filename": "IMG_1026.png",
+      "sha256": "9817f2262895a8989a311199c7535839db5c87602132e1162f35bd3da7181e4c",
+      "byte_size": 733826,
+      "description": "Heraldic mark: orange/amber crown atop crossed angular elements (feathers or stylized swords), centered on midnight-navy field. Square aspect.",
+      "classification_confidence": "MEDIUM",
+      "sub_class": "mark",
+      "tags": [
+        "heraldic",
+        "crown",
+        "dark-mode",
+        "logo-candidate"
+      ]
+    },
+    {
+      "asset_id": "B-PORTRAIT-0003",
+      "type": "image/jpeg",
+      "filename": "1750929205240.jpg",
+      "sha256": "850a37c3e68b090fba803bf34ae842fcc2ed5dbfcaad758c6c65cfc45f95e1de",
+      "byte_size": 73190,
+      "description": "Personal portrait. Subject in fitted patterned hat, oversized dark glasses, gold dental work, plaid collar visible. Hexagonal frame on black background, violet/blue duotone treatment.",
+      "classification_confidence": "MEDIUM",
+      "sub_class": "portrait",
+      "tags": [
+        "portrait",
+        "hexagonal-frame",
+        "duotone"
+      ]
+    }
+  ],
+  "provenance": {
+    "prev_hash": null,
+    "hash_algo": "sha256",
+    "this_hash": "e2e4fa089cc236cac1c768794e8f34e84b663a07ca9c1674655fb39292a3bb3f"
+  }
+}
