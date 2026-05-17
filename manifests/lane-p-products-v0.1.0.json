@@ -1,0 +1,168 @@
+{
+  "$id": "urn:cortexchain:canon-ledger:lane-p:manifest:v0.1",
+  "schema_version": "1.0",
+  "lane": "P",
+  "name": "PRODUCTS",
+  "version": "0.1.0",
+  "sealed_at": "2026-05-17",
+  "architect": "Psi-001 / Brandon Mark Hines",
+  "house": "House of Orange / ARCHON Psi Atelier",
+  "signing_entity": "CortexChain, Inc. (Waveform Tech LLC)",
+  "issuer": {
+    "name": "ARCHON Psi Atelier",
+    "agent_id": "archon-ledger-emit"
+  },
+  "lifecycle_state": "DRAFT",
+  "status": "OPEN",
+  "orthography_lock": "CLAVSUS",
+  "orthography_correction_note": "Sibling-provided draft used 'CLAVSVS'. Corrected to 'CLAVSUS' per Lane S Day III.f canon (V/U disambiguation rule: CLAVSUS, not CLAVSVS).",
+  "scope": "Lane P houses canon for ARCHON Psi product and service offerings: editioned physical Vehicles (garments, headwear), capacity-limited service deliverables (Briefs, Sprints, Retainers, Commissions), and the issuance discipline (SKU rules, price-lock, edition-cap, drift controls) that prevents commerce drift across surfaces. Anchored against canon-infra v1.0 attestation primitive.",
+  "governing_principles": [
+    "Seal is final.",
+    "Receipt-write-on-every-branch.",
+    "Price drift is forbidden: price change requires a new SKU and a new receipt.",
+    "Edition drift is forbidden: edition cap change requires a new SKU and a new receipt.",
+    "Material drift is forbidden: material substitution requires a new SKU.",
+    "One primary mark per surface (physical).",
+    "Chain Reference rule: chain = attested git history + receipt hashes (NOT blockchain).",
+    "'Jewel Core' is a Lane P reserved word for the provenance engine; physical Vehicles must be named by vehicle_type (Garment, Headwear, Writ, Sprint, etc.)."
+  ],
+  "definitions": {
+    "jewel_core": "The provenance engine: receipt_id, hashes, sealing, access rights (unwearable authority token). Lane-P-scoped definition.",
+    "vehicle": "The physical or digital object that carries the Jewel Core (garment, headwear, document, sprint deliverable).",
+    "editioned": "Hard-capped physical/digital units with unit_serial and edition_cap.",
+    "capacity_limited": "Service inventory limited by operator throughput windows, not unit counts."
+  },
+  "name_collision_note": {
+    "collision_id": "JEWEL_CORE_DUAL_USAGE",
+    "severity": "managed",
+    "description": "The term 'Jewel Core' has two distinct canonical meanings in this repo:",
+    "usage_a": {
+      "scope": "Lane P (this manifest)",
+      "definition": "Provenance engine carried by a Vehicle (receipt + hashes + access rights).",
+      "reserved_word": true
+    },
+    "usage_b": {
+      "scope": "canon-infra primitive",
+      "definition": "Scoring doctrine: Jewel-Core = min(S, M). Lane-neutral.",
+      "anchor": "canon-infra/schemas/jewel-core-schema-v1.0.md",
+      "anchor_sha256": "dd957d3c1d4d5d002e966d0c617b51cb988121708c915b89081cdc9ef2569a79"
+    },
+    "resolution_policy": "Both definitions remain canonical in scope. Cross-references between scopes must use full disambiguated phrases: 'Lane P Jewel Core (provenance engine)' or 'canon-infra Jewel-Core Primitive (scoring rule)'. Future canon work may rename one or the other if drift becomes operationally costly."
+  },
+  "drift_controls": {
+    "price_change_rule": "NEW_SKU_REQUIRED",
+    "edition_cap_change_rule": "NEW_SKU_REQUIRED",
+    "material_change_rule": "NEW_SKU_REQUIRED",
+    "naming_collision_rule": "JEWEL_CORE_RESERVED_WORD",
+    "forbidden_phrases_in_lane_p": [
+      "block hash",
+      "on-chain",
+      "NFT",
+      "tokenized"
+    ],
+    "forbidden_phrases_note": "Use 'seal_hash (sha256)', 'receipt_id', and 'attested git reference' instead. Tokenization may be canon-opened in a future lane with explicit ratification."
+  },
+  "files": {
+    "sku_schema": {
+      "path": "lane-p/schemas/product-sku-schema-v0.1.0.md",
+      "sha256": "7d44e5b7d105e3ecb822f6899cb3a2f23ac6e086a1fede345ac0d2ba26e2b19d",
+      "byte_size": 4190
+    },
+    "tier_table": {
+      "path": "lane-p/tables/products-tiers-t1-t5-v0.1.0.md",
+      "sha256": "69c9e1263010cec38bcac5a90895e8b870d59fe5fd43f3d7a2f09dfd3f63751b",
+      "byte_size": 3550
+    },
+    "t1_writ_template": {
+      "path": "lane-p/writs/t1-writ-of-issuance-template-v0.1.md",
+      "sha256": "d7c860fcbab1dcfeea2f8476794928b69fb41b920ab6cada6d35cb3b069c7931",
+      "byte_size": 2756
+    }
+  },
+  "tier_count": 5,
+  "tier_summary": [
+    {
+      "tier": "T1",
+      "designation": "Sealed Unit",
+      "vehicle_type": "garment",
+      "edition_type": "editioned",
+      "sku_id": "A4-SU-HD01-T1",
+      "price_usd": 480,
+      "edition_cap": 250,
+      "anchor_locked": true
+    },
+    {
+      "tier": "T2",
+      "designation": "Lens Brief",
+      "vehicle_type": "document",
+      "edition_type": "capacity_limited",
+      "sku_id": "A4-LB-WR01-T2",
+      "price_usd": 750,
+      "anchor_locked": false
+    },
+    {
+      "tier": "T3",
+      "designation": "Reality Lens Sprint",
+      "vehicle_type": "service",
+      "edition_type": "capacity_limited",
+      "sku_id": "A4-RLS-72-T3",
+      "price_usd": 5000,
+      "anchor_locked": false
+    },
+    {
+      "tier": "T4",
+      "designation": "Standing Ledger",
+      "vehicle_type": "service",
+      "edition_type": "capacity_limited",
+      "sku_id": "A4-SL-RET-T4",
+      "price_usd": 3500,
+      "anchor_locked": false,
+      "cadence": "monthly"
+    },
+    {
+      "tier": "T5",
+      "designation": "Sovereign Commission",
+      "vehicle_type": "service",
+      "edition_type": "capacity_limited",
+      "sku_id": "A4-SC-ORG-T5",
+      "price_usd_floor": 25000,
+      "anchor_locked": false
+    }
+  ],
+  "anchor_locks": {
+    "T1.price_usd": {
+      "value": 480,
+      "locked_at": "2026-05-17 (Day III.h)",
+      "architect_signature": "Psi-001 explicit ratify"
+    },
+    "T1.edition_cap": {
+      "value": 250,
+      "locked_at": "2026-05-17 (Day III.h)",
+      "architect_signature": "Psi-001 explicit ratify"
+    }
+  },
+  "deferred_items": [
+    {
+      "item_id": "DEFER-T1H-OR-T0",
+      "description": "Headwear Unit (Crown Protocol, $210 / 500 cap) classification: sub-tier T1-H vs T0 Accessory. Sibling-thread spec drafted but Lane P does not absorb without explicit one-word vote (T1-H or T0).",
+      "status": "AWAITING_ARCHITECT_RATIFY"
+    },
+    {
+      "item_id": "DEFER-T2T3T4-CAPACITY",
+      "description": "Weekly capacity caps for T2 / T3 / T4. Pending first-cohort throughput data.",
+      "status": "AWAITING_OPERATIONAL_DATA"
+    },
+    {
+      "item_id": "DEFER-COUNCIL-POLICY",
+      "description": "Council-admission policy receipts. Pending governance lane or explicit policy commit.",
+      "status": "AWAITING_LANE_OR_POLICY"
+    }
+  ],
+  "notes": "Lane P opened Day III.h under VOTE P-OPEN. Lifecycle DRAFT until at least one editioned SKU emits a complete receipt chain (submission_hash + seal_hash + unit_serial + attested git ref). On first complete issuance, lane advances to PROBATION.",
+  "provenance": {
+    "prev_hash": null,
+    "hash_algo": "sha256",
+    "this_hash": "b38f9108a570862090dd1b3ba883c8566f41e703e4b1be71c81c37f6bf423d15"
+  }
+}
